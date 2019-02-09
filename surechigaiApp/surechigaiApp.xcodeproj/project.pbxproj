@@ -111,6 +111,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+        49894DFB1A86D8B4817CCFF7 /* Pods */ = {
+            isa = PBXGroup;
+            children = (
+            C6C9851AC9DED6234261731D /* Pods-surechigaiApp.debug.xcconfig */,
+            B2EF7FBD5D623B7B15AAE220 /* Pods-surechigaiApp.release.xcconfig */,
+            B8FEA189B89CF96EDB41EDB3 /* Pods-surechigaiAppTests.debug.xcconfig */,
+            230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */,
+            5FF24996FA45D46137A9335C /* Pods-surechigaiAppUITests.debug.xcconfig */,
+            76D133AD315419E2303283FF /* Pods-surechigaiAppUITests.release.xcconfig */,
+            );
+            name = Pods;
+            sourceTree = "<group>";
+        };
 		03CD3300220F585E006B7BCA /* TabIcon */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,17 +156,6 @@
 				03CD330C220F5AB7006B7BCA /* Setting_1x.png */,
 			);
 			path = Setting;
-		49894DFB1A86D8B4817CCFF7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C6C9851AC9DED6234261731D /* Pods-surechigaiApp.debug.xcconfig */,
-				B2EF7FBD5D623B7B15AAE220 /* Pods-surechigaiApp.release.xcconfig */,
-				B8FEA189B89CF96EDB41EDB3 /* Pods-surechigaiAppTests.debug.xcconfig */,
-				230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */,
-				5FF24996FA45D46137A9335C /* Pods-surechigaiAppUITests.debug.xcconfig */,
-				76D133AD315419E2303283FF /* Pods-surechigaiAppUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		50C8D80F220F1D4E00D09939 = {
