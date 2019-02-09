@@ -11,16 +11,16 @@ import RealmSwift
 
 class Profile : Object {
     
-    dynamic var id = 0
-    dynamic var handle = ""
-    dynamic var name = ""
-    dynamic var grade = 0
-    dynamic var club = ""
-    dynamic var part_of_class = ""
-    dynamic var course = ""
-    dynamic var student_number = ""
-    dynamic var birthplace = ""
-    dynamic var birthDay = ""
+    @objc dynamic var id = 0
+    @objc dynamic var handle = ""
+    @objc dynamic var name = ""
+    @objc dynamic var grade = 0
+    @objc dynamic var club = ""
+    @objc dynamic var part_of_class = ""
+    @objc dynamic var course = ""
+    @objc dynamic var student_number = ""
+    @objc dynamic var birthplace = ""
+    @objc dynamic var birthDay = ""
     
     
     // idをプライマリキーに設定
