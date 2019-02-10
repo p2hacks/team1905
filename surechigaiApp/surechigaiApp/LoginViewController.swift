@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
             if let user = user {
                 print(user as Any)
                 self.dismiss(animated: true, completion: nil)
+                
+                self.performSegue(withIdentifier: "toHome", sender: nil)
             } else {
                 print("登録できませんでした")
             }
@@ -39,12 +41,15 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) {
             (user, error) in
             if error != nil {
-                print("サインインできませんでした")
+                print("ログインできませんでした")
             }
             if user != nil {
+                print("ログインできました")
                 self.dismiss(animated: true, completion: nil)
+                
+                self.performSegue(withIdentifier: "toHome", sender: nil)
             } else {
-                print("サインインできませんでした")
+                print("ログインできませんでした")
             }
         }
     }
