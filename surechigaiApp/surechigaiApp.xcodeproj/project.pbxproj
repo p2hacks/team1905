@@ -16,6 +16,7 @@
 		03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD330E220F5F05006B7BCA /* HomeViewController.swift */; };
 		03CD3311220F5FB5006B7BCA /* AdvertisementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */; };
 		03CD3313220F5FC8006B7BCA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3312220F5FC8006B7BCA /* SettingViewController.swift */; };
+		32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83CC2210590B0034C094 /* GoogleService-Info.plist */; };
 		50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81B220F1D4E00D09939 /* AppDelegate.swift */; };
 		50C8D81E220F1D4E00D09939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81D220F1D4E00D09939 /* ViewController.swift */; };
 		50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C8D81F220F1D4E00D09939 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementViewController.swift; sourceTree = "<group>"; };
 		03CD3312220F5FC8006B7BCA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-surechigaiAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-surechigaiAppTests/Pods-surechigaiAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		32EB83CC2210590B0034C094 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50C8D818220F1D4E00D09939 /* surechigaiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surechigaiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C8D81B220F1D4E00D09939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C8D81D220F1D4E00D09939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,19 +113,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-        49894DFB1A86D8B4817CCFF7 /* Pods */ = {
-            isa = PBXGroup;
-            children = (
-            C6C9851AC9DED6234261731D /* Pods-surechigaiApp.debug.xcconfig */,
-            B2EF7FBD5D623B7B15AAE220 /* Pods-surechigaiApp.release.xcconfig */,
-            B8FEA189B89CF96EDB41EDB3 /* Pods-surechigaiAppTests.debug.xcconfig */,
-            230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */,
-            5FF24996FA45D46137A9335C /* Pods-surechigaiAppUITests.debug.xcconfig */,
-            76D133AD315419E2303283FF /* Pods-surechigaiAppUITests.release.xcconfig */,
-            );
-            name = Pods;
-            sourceTree = "<group>";
-        };
 		03CD3300220F585E006B7BCA /* TabIcon */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +145,19 @@
 				03CD330C220F5AB7006B7BCA /* Setting_1x.png */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		49894DFB1A86D8B4817CCFF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6C9851AC9DED6234261731D /* Pods-surechigaiApp.debug.xcconfig */,
+				B2EF7FBD5D623B7B15AAE220 /* Pods-surechigaiApp.release.xcconfig */,
+				B8FEA189B89CF96EDB41EDB3 /* Pods-surechigaiAppTests.debug.xcconfig */,
+				230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */,
+				5FF24996FA45D46137A9335C /* Pods-surechigaiAppUITests.debug.xcconfig */,
+				76D133AD315419E2303283FF /* Pods-surechigaiAppUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		50C8D80F220F1D4E00D09939 = {
@@ -197,6 +199,7 @@
 				03CD3300220F585E006B7BCA /* TabIcon */,
 				50C8D824220F1D5100D09939 /* LaunchScreen.storyboard */,
 				50C8D827220F1D5100D09939 /* Info.plist */,
+				32EB83CC2210590B0034C094 /* GoogleService-Info.plist */,
 			);
 			path = surechigaiApp;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				50C8D815220F1D4E00D09939 /* Frameworks */,
 				50C8D816220F1D4E00D09939 /* Resources */,
 				50AE5F58C89796899700D779 /* [CP] Embed Pods Frameworks */,
+				8CD78064AEBF744A7AD8A846 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,6 +357,7 @@
 				03CD3307220F585E006B7BCA /* home_1x.png in Resources */,
 				50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */,
 				03CD32FB220F4EB9006B7BCA /* Home.storyboard in Resources */,
+				32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */,
 				03CD32FF220F53D5006B7BCA /* Setting.storyboard in Resources */,
 				03CD330A220F5A65006B7BCA /* Ad_1x.png in Resources */,
 			);
@@ -428,19 +433,87 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-surechigaiApp/Pods-surechigaiApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-surechigaiApp/Pods-surechigaiApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CD78064AEBF744A7AD8A846 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-surechigaiApp/Pods-surechigaiApp-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-surechigaiApp/Pods-surechigaiApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE9C036D51466170F664EFA1 /* [CP] Check Pods Manifest.lock */ = {

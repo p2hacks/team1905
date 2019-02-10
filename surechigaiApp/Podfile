@@ -6,6 +6,8 @@ target 'surechigaiApp' do
   use_frameworks!
 
   pod 'RealmSwift'
+  pod 'FirebaseUI'
+  pod 'FirebaseUI/Auth'
 
   # Pods for surechigaiApp
 
