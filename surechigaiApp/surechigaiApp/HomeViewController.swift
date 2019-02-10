@@ -16,21 +16,10 @@ enum dataType {
 
 class HomeViewController: UIViewController {
     
-    let realm = try! Realm()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    func createProfile (data: Profile) {
-        // プライマリーキーをユニークな文字列で生成
-        data.id = NSUUID().uuidString
-        
-        try! realm.write {
-            realm.add(data)
-        }
     }
     
 

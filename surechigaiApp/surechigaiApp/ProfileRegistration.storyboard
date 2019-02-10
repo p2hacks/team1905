@@ -75,14 +75,35 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ls6-rG-eph">
-                                <rect key="frame" x="172" y="476" width="31" height="30"/>
+                                <rect key="frame" x="172" y="511" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="onTapRegistrationBtn:" destination="rBh-io-cwg" eventType="touchUpInside" id="Xch-0Z-84W"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="学年" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFQ-cB-pog">
+                                <rect key="frame" x="94" y="454" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="b4W-aM-BIy"/>
                     </view>
+                    <connections>
+                        <outlet property="birthDayTF" destination="duT-Gp-QwN" id="K7z-zT-sWw"/>
+                        <outlet property="birthPlaceTF" destination="c2Y-Vm-Ghf" id="KV6-vg-IRo"/>
+                        <outlet property="clubTF" destination="7fW-2g-lPI" id="MNW-qb-ox6"/>
+                        <outlet property="courseTF" destination="Nwh-r3-nw1" id="RQY-3b-Goj"/>
+                        <outlet property="firstClassTF" destination="IiL-fg-n5T" id="OKr-W6-Xm6"/>
+                        <outlet property="gradeTF" destination="NFQ-cB-pog" id="Io6-tu-vQd"/>
+                        <outlet property="handleTF" destination="ZDP-oK-1DR" id="lxN-Bs-d5m"/>
+                        <outlet property="nameTF" destination="9fg-PE-vIi" id="IgM-7u-JFS"/>
+                        <outlet property="studentNumberTF" destination="V3x-x4-FeU" id="O4z-c0-7ve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBw-tr-LSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
