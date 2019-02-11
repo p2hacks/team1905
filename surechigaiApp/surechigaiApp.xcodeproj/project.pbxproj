@@ -16,6 +16,10 @@
 		03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD330E220F5F05006B7BCA /* HomeViewController.swift */; };
 		03CD3311220F5FB5006B7BCA /* AdvertisementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */; };
 		03CD3313220F5FC8006B7BCA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3312220F5FC8006B7BCA /* SettingViewController.swift */; };
+		32181EC72211AA4A00655BA9 /* NotificationCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181EC62211AA4A00655BA9 /* NotificationCreate.storyboard */; };
+		32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */; };
+		32181ECB2211AA9A00655BA9 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181ECA2211AA9A00655BA9 /* Notification.storyboard */; };
+		32181ECD2211AAAC00655BA9 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181ECC2211AAAC00655BA9 /* NotificationViewController.swift */; };
 		32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83CC2210590B0034C094 /* GoogleService-Info.plist */; };
 		32EB83CF22105F6C0034C094 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB83CE22105F6B0034C094 /* LoginViewController.swift */; };
 		32EB83D122105F800034C094 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83D022105F800034C094 /* Login.storyboard */; };
@@ -65,6 +69,10 @@
 		03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementViewController.swift; sourceTree = "<group>"; };
 		03CD3312220F5FC8006B7BCA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-surechigaiAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-surechigaiAppTests/Pods-surechigaiAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		32181EC62211AA4A00655BA9 /* NotificationCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationCreate.storyboard; sourceTree = "<group>"; };
+		32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCreateViewController.swift; sourceTree = "<group>"; };
+		32181ECA2211AA9A00655BA9 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		32181ECC2211AAAC00655BA9 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		32EB83CC2210590B0034C094 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32EB83CE22105F6B0034C094 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32EB83D022105F800034C094 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -204,6 +212,8 @@
 				50016FC82210802800F6C6D9 /* ProfileRegistrationViewController.swift */,
 				03CD330E220F5F05006B7BCA /* HomeViewController.swift */,
 				03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */,
+				32181ECC2211AAAC00655BA9 /* NotificationViewController.swift */,
+				32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */,
 				03CD3312220F5FC8006B7BCA /* SettingViewController.swift */,
 				32F612C722119649000E2C6A /* SettingTableViewController.swift */,
 				32EB83CE22105F6B0034C094 /* LoginViewController.swift */,
@@ -211,6 +221,8 @@
 				50C8D81F220F1D4E00D09939 /* Main.storyboard */,
 				03CD32FA220F4EB9006B7BCA /* Home.storyboard */,
 				03CD32FC220F5354006B7BCA /* Advertisement.storyboard */,
+				32181ECA2211AA9A00655BA9 /* Notification.storyboard */,
+				32181EC62211AA4A00655BA9 /* NotificationCreate.storyboard */,
 				03CD32FE220F53D5006B7BCA /* Setting.storyboard */,
 				32EB83D022105F800034C094 /* Login.storyboard */,
 				50C8D822220F1D5100D09939 /* Assets.xcassets */,
@@ -378,8 +390,10 @@
 				32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */,
 				03CD32FF220F53D5006B7BCA /* Setting.storyboard in Resources */,
 				50016FCB2210848400F6C6D9 /* ProfileRegistration.storyboard in Resources */,
+				32181EC72211AA4A00655BA9 /* NotificationCreate.storyboard in Resources */,
 				03CD330A220F5A65006B7BCA /* Ad_1x.png in Resources */,
 				32EB83D122105F800034C094 /* Login.storyboard in Resources */,
+				32181ECB2211AA9A00655BA9 /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,8 +588,10 @@
 				50016FC92210802800F6C6D9 /* ProfileRegistrationViewController.swift in Sources */,
 				32F612C822119649000E2C6A /* SettingTableViewController.swift in Sources */,
 				50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */,
+				32181ECD2211AAAC00655BA9 /* NotificationViewController.swift in Sources */,
 				03CD3311220F5FB5006B7BCA /* AdvertisementViewController.swift in Sources */,
 				03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */,
+				32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
