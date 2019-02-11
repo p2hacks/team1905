@@ -14,7 +14,7 @@ class Profile : Object {
     @objc dynamic var id = ""
     @objc dynamic var handle = ""
     @objc dynamic var name = ""
-    @objc dynamic var grade = 0
+    @objc dynamic var grade = ""
     @objc dynamic var club = ""
     @objc dynamic var part_of_class = ""
     @objc dynamic var course = ""

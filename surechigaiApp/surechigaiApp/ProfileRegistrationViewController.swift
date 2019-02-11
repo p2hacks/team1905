@@ -39,17 +39,20 @@ class ProfileRegistrationViewController: UIViewController {
     let degreeList = ["", "学部", "院"]
     let gradeList = ["", "１", "2", "3", "4"]
     
+    var degree = ""
+    var grade = ""
+    
     
     @IBAction func onTapRegistrationBtn(_ sender: Any) {
-        profile.name = nameTF.text
-        profile.student_number = studentNumberTF.text
-        profile.birthDay = birthDayTF.text
-        profile.birthplace = birthPlaceTF.text
-        profile.course = courseTF.text
-        profile.part_of_class = firstClassTF.text
-        profile.handle = handleTF.text
-        profile.club = clubTF.text
-        profile.grade = gradeTF.text
+        profile.name = nameTF.text!
+        profile.student_number = studentNumberTF.text!
+        profile.birthDay = birthDayTF.text!
+        profile.birthplace = birthPlaceTF.text!
+        profile.course = courseTF.text!
+        profile.part_of_class = firstClassTF.text!
+        profile.handle = handleTF.text!
+        profile.club = clubTF.text!
+        profile.grade = gradeTF.text!
         
         createProfile(data: profile)
         
@@ -84,11 +87,11 @@ class ProfileRegistrationViewController: UIViewController {
         self.courseTF.inputView = coursePickerView
         self.courseTF.inputAccessoryView = toolbar
         
-        self.courseTF.inputView = firstClassPickerView
-        self.courseTF.inputAccessoryView = toolbar
+        self.firstClassTF.inputView = firstClassPickerView
+        self.firstClassTF.inputAccessoryView = toolbar
         
         self.gradeTF.inputView = gradePickerView
-        self.courseTF.inputAccessoryView = toolbar
+        self.gradeTF.inputAccessoryView = toolbar
     }
     
     func createProfile (data: Profile) {
@@ -140,7 +143,10 @@ extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerView
             } else {
                 return gradeList.count
             }
+        default:
+            break
         }
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -157,7 +163,10 @@ extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerView
             } else {
                 return gradeList[row]
             }
+        default:
+            break
         }
+        return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -169,23 +178,23 @@ extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerView
             self.firstClassTF.text = firstClassList[row]
             
         case gradePickerView:
-            var degree = ""
-            var grade = ""
             if component == 0 {
                 degree = degreeList[row]
             } else {
                 grade = gradeList[row]
             }
             self.gradeTF.text = degree + grade
+        default:
+            break
         }
     }
     
-    func cancel() {
-        self.textField.text = ""
-        self.textField.endEditing(true)
+    @objc func cancel() {
+        //self.textField.text = ""
+        //self.textField.endEditing(true)
     }
     
-    func done() {
-        self.textField.endEditing(true)
+    @objc func done() {
+        //self.textField.endEditing(true)
     }
 }
