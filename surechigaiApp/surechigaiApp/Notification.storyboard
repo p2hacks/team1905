@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="45L-bV-Gtt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDX-WR-jgc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,37 +10,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="aIR-1I-Ggk">
+        <!--Notification-->
+        <scene sceneID="V3q-oG-jIh">
             <objects>
-                <navigationController storyboardIdentifier="Notification" id="45L-bV-Gtt" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J9Z-ek-APH">
+                <navigationController id="IDX-WR-jgc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notification" image="Ad_1x.png" landscapeImage="Ad_1x.png" largeContentSizeImage="Ad_1x.png" selectedImage="Ad_1x.png" id="mHl-4T-aCH"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="upK-Dv-tub">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="reI-Y5-Cvn" kind="relationship" relationship="rootViewController" id="Un9-dq-yDD"/>
+                        <segue destination="5u2-ch-hPi" kind="relationship" relationship="rootViewController" id="QOb-Do-mfV"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gZm-Rd-gEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2S-dU-Xce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-566" y="177"/>
+            <point key="canvasLocation" x="-620" y="382"/>
         </scene>
         <!--Notification View Controller-->
-        <scene sceneID="PN4-dV-X5Q">
+        <scene sceneID="BbX-xY-Ed3">
             <objects>
-                <viewController id="reI-Y5-Cvn" customClass="NotificationViewController" customModule="surechigaiApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dC3-1A-XKB">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BET-23-Lp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="5u2-ch-hPi" customClass="NotificationViewController" customModule="surechigaiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EAn-tX-QAp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Du2-xs-NxQ"/>
+                        <viewLayoutGuide key="safeArea" id="IOP-zq-Qie"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yrP-Ma-3P0"/>
+                    <navigationItem key="navigationItem" id="sSa-bG-wfH"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KOO-6S-7H4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520" y="182"/>
+            <point key="canvasLocation" x="458" y="382"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Ad_1x.png" width="25" height="25"/>
+    </resources>
 </document>
