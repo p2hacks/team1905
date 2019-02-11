@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		03CD32FB220F4EB9006B7BCA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD32FA220F4EB9006B7BCA /* Home.storyboard */; };
-		03CD32FD220F5354006B7BCA /* Advertisement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD32FC220F5354006B7BCA /* Advertisement.storyboard */; };
 		03CD32FF220F53D5006B7BCA /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD32FE220F53D5006B7BCA /* Setting.storyboard */; };
 		03CD3307220F585E006B7BCA /* home_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD3304220F585E006B7BCA /* home_1x.png */; };
 		03CD330A220F5A65006B7BCA /* Ad_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD3309220F5A65006B7BCA /* Ad_1x.png */; };
 		03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD330C220F5AB7006B7BCA /* Setting_1x.png */; };
 		03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD330E220F5F05006B7BCA /* HomeViewController.swift */; };
-		03CD3311220F5FB5006B7BCA /* AdvertisementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */; };
-		03CD3313220F5FC8006B7BCA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD3312220F5FC8006B7BCA /* SettingViewController.swift */; };
 		32181EC72211AA4A00655BA9 /* NotificationCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181EC62211AA4A00655BA9 /* NotificationCreate.storyboard */; };
 		32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */; };
 		32181ECB2211AA9A00655BA9 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181ECA2211AA9A00655BA9 /* Notification.storyboard */; };
@@ -60,14 +57,11 @@
 
 /* Begin PBXFileReference section */
 		03CD32FA220F4EB9006B7BCA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		03CD32FC220F5354006B7BCA /* Advertisement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Advertisement.storyboard; sourceTree = "<group>"; };
 		03CD32FE220F53D5006B7BCA /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		03CD3304220F585E006B7BCA /* home_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_1x.png; sourceTree = "<group>"; };
 		03CD3309220F5A65006B7BCA /* Ad_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ad_1x.png; sourceTree = "<group>"; };
 		03CD330C220F5AB7006B7BCA /* Setting_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting_1x.png; sourceTree = "<group>"; };
 		03CD330E220F5F05006B7BCA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementViewController.swift; sourceTree = "<group>"; };
-		03CD3312220F5FC8006B7BCA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-surechigaiAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-surechigaiAppTests/Pods-surechigaiAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		32181EC62211AA4A00655BA9 /* NotificationCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationCreate.storyboard; sourceTree = "<group>"; };
 		32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCreateViewController.swift; sourceTree = "<group>"; };
@@ -211,16 +205,13 @@
 				50C8D81D220F1D4E00D09939 /* ViewController.swift */,
 				50016FC82210802800F6C6D9 /* ProfileRegistrationViewController.swift */,
 				03CD330E220F5F05006B7BCA /* HomeViewController.swift */,
-				03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */,
 				32181ECC2211AAAC00655BA9 /* NotificationViewController.swift */,
 				32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */,
-				03CD3312220F5FC8006B7BCA /* SettingViewController.swift */,
 				32F612C722119649000E2C6A /* SettingTableViewController.swift */,
 				32EB83CE22105F6B0034C094 /* LoginViewController.swift */,
 				50016FCA2210848400F6C6D9 /* ProfileRegistration.storyboard */,
 				50C8D81F220F1D4E00D09939 /* Main.storyboard */,
 				03CD32FA220F4EB9006B7BCA /* Home.storyboard */,
-				03CD32FC220F5354006B7BCA /* Advertisement.storyboard */,
 				32181ECA2211AA9A00655BA9 /* Notification.storyboard */,
 				32181EC62211AA4A00655BA9 /* NotificationCreate.storyboard */,
 				03CD32FE220F53D5006B7BCA /* Setting.storyboard */,
@@ -381,7 +372,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C8D826220F1D5100D09939 /* LaunchScreen.storyboard in Resources */,
-				03CD32FD220F5354006B7BCA /* Advertisement.storyboard in Resources */,
 				03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */,
 				50C8D823220F1D5100D09939 /* Assets.xcassets in Resources */,
 				03CD3307220F585E006B7BCA /* home_1x.png in Resources */,
@@ -579,7 +569,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03CD3313220F5FC8006B7BCA /* SettingViewController.swift in Sources */,
 				50C8D84D220F552500D09939 /* Notification.swift in Sources */,
 				50C8D81E220F1D4E00D09939 /* ViewController.swift in Sources */,
 				50C8D84A220F502300D09939 /* Profile.swift in Sources */,
@@ -589,7 +578,6 @@
 				32F612C822119649000E2C6A /* SettingTableViewController.swift in Sources */,
 				50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */,
 				32181ECD2211AAAC00655BA9 /* NotificationViewController.swift in Sources */,
-				03CD3311220F5FB5006B7BCA /* AdvertisementViewController.swift in Sources */,
 				03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */,
 				32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */,
 			);
