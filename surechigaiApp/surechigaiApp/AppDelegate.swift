@@ -21,6 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        //自動ログイン
+        if Auth.auth().currentUser != nil { //もしもユーザがログインしていたら
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateInitialViewController()
+            
+            self.window?.rootViewController = initialViewController
+            
+            self.window?.makeKeyAndVisible()
+        }
+        
         //Realmのマイグレーション処理
         let config = Realm.Configuration(
             schemaVersion : 2 , //データの構造が変わったらここを変える

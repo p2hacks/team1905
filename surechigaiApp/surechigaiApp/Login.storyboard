@@ -43,26 +43,16 @@
                                     <action selector="pushSignUpButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="Hz8-tl-3r2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF0-DW-7Pw">
-                                <rect key="frame" x="162.66666666666666" y="534" width="50" height="30"/>
-                                <state key="normal" title="login"/>
-                                <connections>
-                                    <action selector="pushLoginButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="agC-9d-Iur"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AF0-DW-7Pw" firstAttribute="top" secondItem="mQb-ew-8lD" secondAttribute="bottom" constant="100" id="0MZ-ll-wwu"/>
                             <constraint firstItem="Eh5-m7-NVW" firstAttribute="width" secondItem="qsj-Gm-q1g" secondAttribute="width" id="384-jU-0a6"/>
                             <constraint firstItem="mQb-ew-8lD" firstAttribute="top" secondItem="Eh5-m7-NVW" secondAttribute="bottom" constant="100" id="86F-sH-yFZ"/>
                             <constraint firstItem="qsj-Gm-q1g" firstAttribute="top" secondItem="AcD-OJ-zHs" secondAttribute="top" constant="100" id="AaN-FU-m0i"/>
                             <constraint firstItem="mQb-ew-8lD" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="ApW-40-0nz"/>
                             <constraint firstItem="qsj-Gm-q1g" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="BZ0-AD-PeF"/>
-                            <constraint firstItem="AF0-DW-7Pw" firstAttribute="width" secondItem="mQb-ew-8lD" secondAttribute="width" id="HPT-TG-7Vu"/>
                             <constraint firstItem="Eh5-m7-NVW" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="Pbv-5B-g4e"/>
                             <constraint firstItem="Eh5-m7-NVW" firstAttribute="top" secondItem="qsj-Gm-q1g" secondAttribute="bottom" constant="100" id="T1d-IB-F11"/>
-                            <constraint firstItem="AF0-DW-7Pw" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="xGA-ud-DwL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AcD-OJ-zHs"/>
                     </view>
