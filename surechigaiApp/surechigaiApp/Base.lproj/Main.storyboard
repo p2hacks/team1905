@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="641" y="-46"/>
         </scene>
-        <!--ProfileRegistration-->
+        <!--Setting-->
         <scene sceneID="Da2-Eq-Xrc">
             <objects>
-                <viewControllerPlaceholder storyboardName="ProfileRegistration" id="0UM-vL-IX1" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Setting" id="0UM-vL-IX1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" image="Setting_1x.png" landscapeImage="Setting_1x.png" largeContentSizeImage="Setting_1x.png" selectedImage="Setting_1x.png" id="xE0-ln-YWw"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wg-MA-GjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
