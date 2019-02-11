@@ -19,6 +19,9 @@
 		32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83CC2210590B0034C094 /* GoogleService-Info.plist */; };
 		32EB83CF22105F6C0034C094 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB83CE22105F6B0034C094 /* LoginViewController.swift */; };
 		32EB83D122105F800034C094 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83D022105F800034C094 /* Login.storyboard */; };
+		50016FC92210802800F6C6D9 /* ProfileRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FC82210802800F6C6D9 /* ProfileRegistrationViewController.swift */; };
+		50016FCB2210848400F6C6D9 /* ProfileRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50016FCA2210848400F6C6D9 /* ProfileRegistration.storyboard */; };
+		50016FD522115ACA00F6C6D9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FD422115ACA00F6C6D9 /* CustomTextField.swift */; };
 		50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81B220F1D4E00D09939 /* AppDelegate.swift */; };
 		50C8D81E220F1D4E00D09939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81D220F1D4E00D09939 /* ViewController.swift */; };
 		50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C8D81F220F1D4E00D09939 /* Main.storyboard */; };
@@ -64,6 +67,9 @@
 		32EB83CC2210590B0034C094 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32EB83CE22105F6B0034C094 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32EB83D022105F800034C094 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		50016FC82210802800F6C6D9 /* ProfileRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRegistrationViewController.swift; sourceTree = "<group>"; };
+		50016FCA2210848400F6C6D9 /* ProfileRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileRegistration.storyboard; sourceTree = "<group>"; };
+		50016FD422115ACA00F6C6D9 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		50C8D818220F1D4E00D09939 /* surechigaiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surechigaiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C8D81B220F1D4E00D09939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C8D81D220F1D4E00D09939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,12 +196,15 @@
 			isa = PBXGroup;
 			children = (
 				50C8D84B220F502B00D09939 /* Model */,
+				50016FD422115ACA00F6C6D9 /* CustomTextField.swift */,
 				50C8D81B220F1D4E00D09939 /* AppDelegate.swift */,
 				50C8D81D220F1D4E00D09939 /* ViewController.swift */,
+				50016FC82210802800F6C6D9 /* ProfileRegistrationViewController.swift */,
 				03CD330E220F5F05006B7BCA /* HomeViewController.swift */,
 				03CD3310220F5FB5006B7BCA /* AdvertisementViewController.swift */,
 				03CD3312220F5FC8006B7BCA /* SettingViewController.swift */,
 				32EB83CE22105F6B0034C094 /* LoginViewController.swift */,
+				50016FCA2210848400F6C6D9 /* ProfileRegistration.storyboard */,
 				50C8D81F220F1D4E00D09939 /* Main.storyboard */,
 				03CD32FA220F4EB9006B7BCA /* Home.storyboard */,
 				03CD32FC220F5354006B7BCA /* Advertisement.storyboard */,
@@ -365,6 +374,7 @@
 				03CD32FB220F4EB9006B7BCA /* Home.storyboard in Resources */,
 				32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */,
 				03CD32FF220F53D5006B7BCA /* Setting.storyboard in Resources */,
+				50016FCB2210848400F6C6D9 /* ProfileRegistration.storyboard in Resources */,
 				03CD330A220F5A65006B7BCA /* Ad_1x.png in Resources */,
 				32EB83D122105F800034C094 /* Login.storyboard in Resources */,
 			);
@@ -556,7 +566,9 @@
 				50C8D84D220F552500D09939 /* Notification.swift in Sources */,
 				50C8D81E220F1D4E00D09939 /* ViewController.swift in Sources */,
 				50C8D84A220F502300D09939 /* Profile.swift in Sources */,
+				50016FD522115ACA00F6C6D9 /* CustomTextField.swift in Sources */,
 				32EB83CF22105F6C0034C094 /* LoginViewController.swift in Sources */,
+				50016FC92210802800F6C6D9 /* ProfileRegistrationViewController.swift in Sources */,
 				50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */,
 				03CD3311220F5FB5006B7BCA /* AdvertisementViewController.swift in Sources */,
 				03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */,

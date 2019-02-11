@@ -11,7 +11,7 @@ import RealmSwift
 
 class Notification : Object {
     
-    @objc dynamic var id = 0
+    @objc dynamic var id = ""
     @objc dynamic var type = ""
     @objc dynamic var title = ""
     @objc dynamic var text = ""

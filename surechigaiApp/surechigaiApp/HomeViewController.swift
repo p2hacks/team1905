@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
+
+enum dataType {
+    case profile
+    case notification
+}
 
 class HomeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("aaa")
 
         // Do any additional setup after loading the view.
     }
