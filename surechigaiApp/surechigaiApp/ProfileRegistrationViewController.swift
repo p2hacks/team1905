@@ -19,13 +19,13 @@ class ProfileRegistrationViewController: UIViewController {
     
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var studentNumberTF: UITextField!
-    @IBOutlet weak var birthDayTF: UITextField!
+    @IBOutlet weak var birthDayTF: CustomTextField!
     @IBOutlet weak var birthPlaceTF: UITextField!
-    @IBOutlet weak var courseTF: UITextField!
-    @IBOutlet weak var firstClassTF: UITextField!
+    @IBOutlet weak var courseTF: CustomTextField!
+    @IBOutlet weak var firstClassTF: CustomTextField!
     @IBOutlet weak var handleTF: UITextField!
     @IBOutlet weak var clubTF: UITextField!
-    @IBOutlet weak var gradeTF: UITextField!
+    @IBOutlet weak var gradeTF: CustomTextField!
     
     var coursePickerView: UIPickerView = UIPickerView()
     var firstClassPickerView: UIPickerView = UIPickerView()
@@ -190,8 +190,7 @@ extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerView
     }
     
     @objc func cancel() {
-        //self.textField.text = ""
-        //self.textField.endEditing(true)
+        self.view.endEditing(true)
     }
     
     @objc func done() {
