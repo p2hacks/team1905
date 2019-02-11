@@ -36,23 +36,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func pushLoginButton(_ sender: UIButton) {
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) {
-            (user, error) in
-            if error != nil {
-                print("ログインできませんでした")
-            }
-            if user != nil {
-                print("ログインできました")
-                self.dismiss(animated: true, completion: nil)
-                
-                self.performSegue(withIdentifier: "toHome", sender: nil)
-            } else {
-                print("ログインできませんでした")
-            }
-        }
-    }
     /*
     // MARK: - Navigation
 
