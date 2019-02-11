@@ -13,7 +13,10 @@ enum pickerType {
     case course
     case firstClass
     case grade
+    case birthDay
 }
+
+// Todo: 各TextFieldの規定外bの入力があった時のアラート
 
 class ProfileRegistrationViewController: UIViewController {
     
@@ -31,6 +34,8 @@ class ProfileRegistrationViewController: UIViewController {
     var firstClassPickerView: UIPickerView = UIPickerView()
     var gradePickerView: UIPickerView = UIPickerView()
     
+    let datePicker = UIDatePicker()
+    
     let realm = try! Realm()
     var profile = Profile()
     
@@ -42,6 +47,7 @@ class ProfileRegistrationViewController: UIViewController {
     var degree = ""
     var grade = ""
     
+    var pickerFlg: pickerType!
     
     @IBAction func onTapRegistrationBtn(_ sender: Any) {
         profile.name = nameTF.text!
@@ -61,6 +67,11 @@ class ProfileRegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        birthDayTF.delegate = self
+        courseTF.delegate = self
+        firstClassTF.delegate = self
+        gradeTF.delegate = self
+        
         coursePickerView.delegate = self
         coursePickerView.dataSource = self
         coursePickerView.showsSelectionIndicator = true
@@ -74,6 +85,7 @@ class ProfileRegistrationViewController: UIViewController {
         gradePickerView.showsSelectionIndicator = true
         
         initPickerView()
+        initDatePicker()
         
     }
     
@@ -92,6 +104,43 @@ class ProfileRegistrationViewController: UIViewController {
         
         self.gradeTF.inputView = gradePickerView
         self.gradeTF.inputAccessoryView = toolbar
+    }
+    
+    func initDatePicker() {
+        
+        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(ProfileRegistrationViewController.done))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(ProfileRegistrationViewController.cancel))
+        toolbar.setItems([cancelItem, doneItem], animated: true)
+        
+        datePicker.addTarget(self, action: #selector(ProfileRegistrationViewController.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
+        
+        datePicker.datePickerMode = .date
+        datePicker.locale = Locale(identifier: "ja")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-DD"
+        
+        let minDateString = "1940-01-01"
+        let minDate = dateFormatter.date(from: minDateString)
+        
+        datePicker.minimumDate = minDate
+        datePicker.maximumDate = Date()
+        
+        let defaultDateString = "1990-01-01"
+        let defaultDate = dateFormatter.date(from: defaultDateString)
+        
+        datePicker.date = defaultDate!
+        
+        birthDayTF.inputView = datePicker
+        birthDayTF.inputAccessoryView = toolbar
+    }
+    
+    //datepickerが選択されたらtextfieldに表示
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "yyyy/MM/dd";
+        birthDayTF.text = dateFormatter.string(from: sender.date)
     }
     
     func createProfile (data: Profile) {
@@ -119,6 +168,7 @@ class ProfileRegistrationViewController: UIViewController {
     
 }
 
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView == gradePickerView {
@@ -190,10 +240,45 @@ extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerView
     }
     
     @objc func cancel() {
+        switch pickerFlg {
+        case .birthDay?:
+            birthDayTF.text = ""
+        case .course?:
+            courseTF.text = ""
+        case .firstClass?:
+            firstClassTF.text = ""
+        case .grade?:
+            gradeTF.text = ""
+        default:
+            break
+        }
         self.view.endEditing(true)
     }
     
     @objc func done() {
-        //self.textField.endEditing(true)
+        self.view.endEditing(true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension ProfileRegistrationViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+            
+        case birthDayTF:
+            pickerFlg = .birthDay
+            
+        case courseTF:
+            pickerFlg = .course
+            
+        case firstClassTF:
+            pickerFlg = .firstClass
+            
+        case gradeTF:
+            pickerFlg = .grade
+            
+        default:
+            break
+        }
     }
 }
