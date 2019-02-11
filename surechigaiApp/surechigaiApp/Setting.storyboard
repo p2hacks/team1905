@@ -121,11 +121,20 @@
                     <navigationItem key="navigationItem" id="2D4-3L-3sU"/>
                     <connections>
                         <outlet property="settingTableView" destination="JK4-fT-cii" id="9wg-c2-4c2"/>
+                        <segue destination="aaD-SQ-bOr" kind="presentation" identifier="toLogin" id="mjc-YL-NGl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6g-tp-kEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2159" y="-1"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="Q1w-u6-ZUF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="aaD-SQ-bOr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIX-HV-uNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3179" y="4"/>
         </scene>
         <!--Setting-->
         <scene sceneID="Vca-Vl-Cb1">

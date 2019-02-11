@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SettingTableViewController: UITableViewController {
 
@@ -17,5 +19,44 @@ class SettingTableViewController: UITableViewController {
 
     }
 
+    override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        if (cell?.reuseIdentifier == "logoutCell") {
+            
+            logoutDialog()
+        }
+    }
+    
+    func logoutDialog() {
+        
+        let alertController:UIAlertController = UIAlertController(
+            title: "ログアウト",
+            message: "本当にログアウトしますか？",
+            preferredStyle:  UIAlertController.Style.alert
+        )
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (action: UIAlertAction) in
+            // okが押されたときの処理
+            print("ok")
+            
+            do {
+                try Auth.auth().signOut()
+                self.performSegue(withIdentifier: "toLogin", sender: nil)
+            } catch {
+                print("ログアウトできない")
+            }
+        }
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel) { (action: UIAlertAction) in
+            // キャンセルが押されたときの処理
+            print("Cancel")
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(defaultAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 
 }

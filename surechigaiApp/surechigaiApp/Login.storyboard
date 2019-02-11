@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="7dJ-s4-dcp">
             <objects>
-                <viewController id="Mm8-Xx-3pc" customClass="LoginViewController" customModule="surechigaiApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="Mm8-Xx-3pc" customClass="LoginViewController" customModule="surechigaiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qQm-tM-XfE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,12 +33,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWs-2I-aO6">
+                                <rect key="frame" x="156.66666666666666" y="534" width="62" height="30"/>
+                                <state key="normal" title="ログイン"/>
+                                <connections>
+                                    <action selector="pushLoginButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="TM4-fE-8Vq"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-ew-8lD">
-                                <rect key="frame" x="162.66666666666666" y="404" width="50" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="yID-ZB-ioO"/>
-                                </constraints>
-                                <state key="normal" title="sign up"/>
+                                <rect key="frame" x="133.66666666666666" y="404" width="108" height="30"/>
+                                <state key="normal" title="アカウント作成"/>
                                 <connections>
                                     <action selector="pushSignUpButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="Hz8-tl-3r2"/>
                                 </connections>
@@ -47,12 +51,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Eh5-m7-NVW" firstAttribute="width" secondItem="qsj-Gm-q1g" secondAttribute="width" id="384-jU-0a6"/>
-                            <constraint firstItem="mQb-ew-8lD" firstAttribute="top" secondItem="Eh5-m7-NVW" secondAttribute="bottom" constant="100" id="86F-sH-yFZ"/>
                             <constraint firstItem="qsj-Gm-q1g" firstAttribute="top" secondItem="AcD-OJ-zHs" secondAttribute="top" constant="100" id="AaN-FU-m0i"/>
-                            <constraint firstItem="mQb-ew-8lD" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="ApW-40-0nz"/>
                             <constraint firstItem="qsj-Gm-q1g" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="BZ0-AD-PeF"/>
+                            <constraint firstItem="mQb-ew-8lD" firstAttribute="top" secondItem="Eh5-m7-NVW" secondAttribute="bottom" constant="100" id="Bsg-EL-usV"/>
+                            <constraint firstItem="mQb-ew-8lD" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="IZe-1b-AU9"/>
+                            <constraint firstItem="NWs-2I-aO6" firstAttribute="top" secondItem="mQb-ew-8lD" secondAttribute="bottom" constant="100" id="Ln7-fU-rwB"/>
                             <constraint firstItem="Eh5-m7-NVW" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="Pbv-5B-g4e"/>
                             <constraint firstItem="Eh5-m7-NVW" firstAttribute="top" secondItem="qsj-Gm-q1g" secondAttribute="bottom" constant="100" id="T1d-IB-F11"/>
+                            <constraint firstItem="NWs-2I-aO6" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="d0j-Se-CCi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AcD-OJ-zHs"/>
                     </view>
