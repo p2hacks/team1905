@@ -20,6 +20,8 @@ enum pickerType {
 
 class ProfileRegistrationViewController: UIViewController {
     
+    let SET_TEXT_ERROR: String = "error: Realmのデータが空ですが、setTextが呼ばれています"
+    
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var studentNumberTF: UITextField!
     @IBOutlet weak var birthDayTF: CustomTextField!
@@ -37,17 +39,30 @@ class ProfileRegistrationViewController: UIViewController {
     let datePicker = UIDatePicker()
     
     let realm = try! Realm()
-    var profile = Profile()
+    var profile: Profile = Profile()
     
-    let courseList = ["", "情報システム", "デザイン", "知能システム", "複雑系", "高度ICT"]
-    let firstClassList = ["", "前半", "中間", "後半"]
-    let degreeList = ["", "学部", "院"]
-    let gradeList = ["", "１", "2", "3", "4"]
+    let courseList: [String] = ["", "情報システム", "デザイン", "知能システム", "複雑系", "高度ICT"]
+    let firstClassList: [String] = ["", "前半", "中間", "後半"]
+    let degreeList: [String] = ["", "学部", "院"]
+    let gradeList: [String] = ["", "１", "2", "3", "4"]
     
-    var degree = ""
-    var grade = ""
+    var degree: String = ""
+    var grade: String = ""
+    
+    var defaultCourse_row: Int = 0
+    var defaultFirstClass_row: Int = 0
+    var defaultDegree_row: Int = 0
+    var defaultGrade_row: Int = 0
+    
+    // Datepickerの最小値
+    let minDateString: String = "1940/01/01"
+     // Datepickerの初期値
+    var defaultDateString: String = "1990/01/01"
+    var defaultDate = Date()
     
     var pickerFlg: pickerType!
+    var isFirstResistration: Bool = true
+    
     
     @IBAction func onTapRegistrationBtn(_ sender: Any) {
         profile.name = nameTF.text!
@@ -60,7 +75,13 @@ class ProfileRegistrationViewController: UIViewController {
         profile.club = clubTF.text!
         profile.grade = gradeTF.text!
         
-        createProfile(data: profile)
+        if isFirstResistration {
+            createProfile(data: profile)
+        } else {
+            updateProfile(data: profile)
+        }
+        
+        navigationController?.popViewController(animated: true)
         
     }
     
@@ -84,6 +105,15 @@ class ProfileRegistrationViewController: UIViewController {
         gradePickerView.dataSource = self
         gradePickerView.showsSelectionIndicator = true
         
+        let results = realm.objects(Profile.self)
+        
+        if results.isEmpty {
+            isFirstResistration = true
+        } else {
+            isFirstResistration = false
+            setTextFields()
+        }
+        
         initPickerView()
         initDatePicker()
         
@@ -96,6 +126,8 @@ class ProfileRegistrationViewController: UIViewController {
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(ProfileRegistrationViewController.cancel))
         toolbar.setItems([cancelItem, doneItem], animated: true)
         
+        setDefaultPickerValue()
+        
         self.courseTF.inputView = coursePickerView
         self.courseTF.inputAccessoryView = toolbar
         
@@ -104,6 +136,14 @@ class ProfileRegistrationViewController: UIViewController {
         
         self.gradeTF.inputView = gradePickerView
         self.gradeTF.inputAccessoryView = toolbar
+    }
+    
+    func setDefaultPickerValue() {
+        // 初期値を設定する
+        coursePickerView.selectRow(defaultCourse_row, inComponent: 0, animated: true)
+        firstClassPickerView.selectRow(defaultFirstClass_row, inComponent: 0, animated: true)
+        gradePickerView.selectRow(defaultDegree_row, inComponent: 0, animated: true)
+        gradePickerView.selectRow(defaultGrade_row, inComponent: 1, animated: true)
     }
     
     func initDatePicker() {
@@ -118,22 +158,25 @@ class ProfileRegistrationViewController: UIViewController {
         datePicker.datePickerMode = .date
         datePicker.locale = Locale(identifier: "ja")
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD"
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
         
-        let minDateString = "1940-01-01"
+        
         let minDate = dateFormatter.date(from: minDateString)
         
         datePicker.minimumDate = minDate
         datePicker.maximumDate = Date()
         
-        let defaultDateString = "1990-01-01"
-        let defaultDate = dateFormatter.date(from: defaultDateString)
+        defaultDate = dateFormatter.date(from: defaultDateString)!
         
-        datePicker.date = defaultDate!
+        datePicker.date = defaultDate
         
         birthDayTF.inputView = datePicker
         birthDayTF.inputAccessoryView = toolbar
+    }
+    
+    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
     }
     
     //datepickerが選択されたらtextfieldに表示
@@ -143,7 +186,9 @@ class ProfileRegistrationViewController: UIViewController {
         birthDayTF.text = dateFormatter.string(from: sender.date)
     }
     
-    func createProfile (data: Profile) {
+    // Realm操作系の処理
+    
+    func createProfile(data: Profile) {
         // プライマリーキーをユニークな文字列で生成
         data.id = NSUUID().uuidString
         
@@ -152,8 +197,52 @@ class ProfileRegistrationViewController: UIViewController {
         }
     }
     
-    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
-        return CGRect(x: x, y: y, width: width, height: height)
+    func updateProfile(data: Profile) {
+        
+        let results = realm.objects(Profile.self)
+        
+        try! realm.write {
+            results[0].name = data.name
+            results[0].student_number = data.student_number
+            results[0].birthDay = data.birthDay
+            results[0].birthplace = data.birthplace
+            results[0].course = data.course
+            results[0].part_of_class = data.part_of_class
+            results[0].club = data.club
+            results[0].grade = data.grade
+            results[0].handle = data.handle
+        }
+    }
+    
+    //
+    func setTextFields() {
+        let results = realm.objects(Profile.self)
+        
+        guard results.isEmpty else {
+            nameTF.text = results[0].name
+            studentNumberTF.text = results[0].student_number
+            birthDayTF.text = results[0].birthDay
+            birthPlaceTF.text = results[0].birthplace
+            courseTF.text = results[0].course
+            firstClassTF.text = results[0].part_of_class
+            handleTF.text = results[0].handle
+            clubTF.text = results[0].club
+            gradeTF.text = results[0].grade
+            
+            degree = String(results[0].grade.prefix(results[0].grade.count - 2))
+            grade = String(results[0].grade.suffix(2).prefix(1))
+            
+            defaultCourse_row = courseList.index(of: results[0].course)!
+            defaultFirstClass_row = firstClassList.index(of: results[0].part_of_class)!
+            defaultDegree_row = degreeList.index(of: degree)!
+            defaultGrade_row = gradeList.index(of: grade)!
+            defaultDateString = results[0].birthDay
+            
+            return
+        }
+        
+        print(SET_TEXT_ERROR)
+        
     }
     
     /*
@@ -233,7 +322,18 @@ extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerView
             } else {
                 grade = gradeList[row]
             }
-            self.gradeTF.text = degree + grade
+            if degree != "" , grade != ""{
+                self.gradeTF.text = degree + grade + "年"
+            } else if degree == "" {
+                 self.gradeTF.text = ""
+                self.gradeTF.placeholder = "学部もしくは院を選択"
+            } else if grade == "" {
+                 self.gradeTF.text = ""
+                self.gradeTF.placeholder = "学年を選択"
+            } else {
+                self.gradeTF.text = ""
+                self.gradeTF.placeholder = "学年"
+            }
         default:
             break
         }
@@ -245,10 +345,14 @@ extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerView
             birthDayTF.text = ""
         case .course?:
             courseTF.text = ""
+            defaultCourse_row = 0
         case .firstClass?:
             firstClassTF.text = ""
+            defaultFirstClass_row = 0
         case .grade?:
             gradeTF.text = ""
+            defaultDegree_row = 0
+            defaultGrade_row = 0
         default:
             break
         }
@@ -262,20 +366,36 @@ extension ProfileRegistrationViewController:  UIPickerViewDelegate, UIPickerView
 
 // MARK: - UITextFieldDelegate
 extension ProfileRegistrationViewController: UITextFieldDelegate {
+    //どの入力欄か判別する
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        setDefaultPickerValue() 
+        
         switch textField {
-            
         case birthDayTF:
             pickerFlg = .birthDay
+            birthDayTF.text = defaultDateString
             
         case courseTF:
             pickerFlg = .course
+            guard courseTF!.text != nil else {
+                courseTF.text = courseList[defaultCourse_row]
+                return
+            }
             
         case firstClassTF:
             pickerFlg = .firstClass
+            guard firstClassTF!.text != nil else {
+                firstClassTF.text = firstClassList[defaultFirstClass_row]
+                return
+            }
             
         case gradeTF:
             pickerFlg = .grade
+            guard gradeTF!.text != nil else {
+                gradeTF.text = degreeList[defaultDegree_row] + gradeList[defaultGrade_row] + "年"
+                return
+            }
             
         default:
             break

@@ -26,11 +26,37 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var clubLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initLabels()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
+        initLabels()
+    }
+    
+    func initLabels() {
+        let results = realm.objects(Profile.self)
+        
+        if results.isEmpty {
+            
+        } else {
+            nameLabel.text = "氏名：" + results[0].name
+            studentNumberLabel.text = "学籍番号：" + results[0].student_number
+            birthdayLabel.text = "誕生日：" + results[0].birthDay
+            birthPlaceLabel.text = "出身地：" + results[0].birthplace
+            courseLabel.text = "コース：" + results[0].course
+            firstClassLabel.text = "1年次クラス：" + results[0].part_of_class
+            handleLabel.text = "ハンドルネーム：" + results[0].handle
+            clubLabel.text = "サークル：" + results[0].club
+            gradeLabel.text = "学年：" + results[0].grade
+        }
+        
     }
     
 
