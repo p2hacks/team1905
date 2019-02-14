@@ -59,6 +59,17 @@ class HomeViewController: UIViewController {
         
     }
     
+    // profileデータの引き継ぎ用
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "toExchange") {
+            //遷移先のUIViewControllerを取得
+            let nextVC: ExchangeProfileViewController = (segue.destination as? ExchangeProfileViewController)!
+            let results = realm.objects(Profile.self)
+            //遷移先の変数に値を代入する
+            nextVC.myProfile = results[0]
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

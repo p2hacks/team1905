@@ -26,6 +26,7 @@
 		50016FD522115ACA00F6C6D9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FD422115ACA00F6C6D9 /* CustomTextField.swift */; };
 		50016FD722155AA700F6C6D9 /* ExchangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FD622155AA700F6C6D9 /* ExchangeProfileViewController.swift */; };
 		50016FD922155AC500F6C6D9 /* ExchangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */; };
+		50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */; };
 		50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81B220F1D4E00D09939 /* AppDelegate.swift */; };
 		50C8D81E220F1D4E00D09939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81D220F1D4E00D09939 /* ViewController.swift */; };
 		50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C8D81F220F1D4E00D09939 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		50016FD422115ACA00F6C6D9 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		50016FD622155AA700F6C6D9 /* ExchangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeProfileViewController.swift; sourceTree = "<group>"; };
 		50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeProfile.storyboard; sourceTree = "<group>"; };
+		50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P2PConnectivity.swift; sourceTree = "<group>"; };
 		50C8D818220F1D4E00D09939 /* surechigaiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surechigaiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C8D81B220F1D4E00D09939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C8D81D220F1D4E00D09939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				50C8D84B220F502B00D09939 /* Model */,
+				50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */,
 				50016FD422115ACA00F6C6D9 /* CustomTextField.swift */,
 				50C8D81B220F1D4E00D09939 /* AppDelegate.swift */,
 				50C8D81D220F1D4E00D09939 /* ViewController.swift */,
@@ -587,6 +590,7 @@
 				50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */,
 				32181ECD2211AAAC00655BA9 /* NotificationViewController.swift in Sources */,
 				03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */,
+				50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */,
 				32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
