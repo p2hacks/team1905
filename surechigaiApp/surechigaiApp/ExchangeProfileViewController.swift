@@ -18,7 +18,8 @@ class ExchangeProfileViewController: UIViewController {
     // ピアの表示名
     let displayName: String = ""
     // 告知用の文字列（相手を検索するのに使用するIDの様なもの）
-    let serviceType = "fun-surechigaiApp"
+    // 一つのハイフンしか使用できず、15文字以下である必要がある
+    let serviceType = "fun-surechigai"
     
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var recieveLabel: UILabel!
