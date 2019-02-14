@@ -16,6 +16,17 @@ enum dataType {
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var studentNumberLabel: UILabel!
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var birthPlaceLabel: UILabel!
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var firstClassLabel: UILabel!
+    @IBOutlet weak var handleLabel: UILabel!
+    @IBOutlet weak var clubLabel: UILabel!
+    @IBOutlet weak var gradeLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
