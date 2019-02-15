@@ -13,15 +13,37 @@ import FirebaseAuth
 // ToDo: ログインの可否はアラートで表示させたい
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var pushLogin: UIButton!
+    
+    var screenHeight:CGFloat!
+    var screenWidth:CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        scrollView.delegate = self as? UIScrollViewDelegate
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        // 画面サイズ取得
+        let screenSize: CGRect = UIScreen.main.bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
+        // 表示窓のサイズと位置を設定
+        scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
+        
+        // UIScrollViewの大きさをスクリーンの縦方向を２倍にする
+        scrollView.contentSize = CGSize(width: screenWidth, height: screenHeight*2)
+        
+        // スクロールの跳ね返り無し
+        scrollView.bounces = false
     }
     
     @IBAction func pushSignUpButton(_ sender: UIButton) {
@@ -60,16 +82,67 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self,selector: #selector(LoginViewController.keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(LoginViewController.keyboardWillHide(_:)) ,
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
     }
-    */
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: self.view.window)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardDidHideNotification,
+                                                  object: self.view.window)
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        
+        let info = notification.userInfo!
+        let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        let bottomTextField = pushLogin.frame.origin.y + pushLogin.frame.height
+        let topKeyboard = screenHeight - keyboardFrame.size.height
+        let distance = bottomTextField - topKeyboard
+        
+        if distance >= 0 {
+            scrollView.contentOffset.y = distance + 30.0
+        }
+        
+        //        調整用
+        //        print("hyouji bottomTextField : \(bottomTextField)")
+        //        print("hyouji pushLogin.frame.origin.y : \(pushLogin.frame.origin.y)")
+        //        print("hyouji pushLogin.frame.height : \(pushLogin.frame.height)")
+        //        print("hyouji topKeyboard : \(topKeyboard)")
+        //        print("hyouji screenHeight : \(String(describing: screenHeight))")
+        //        print("hyouji keyboardFrame.size.height : \(keyboardFrame.size.height)")
+        //        print("hyouji distance : \(distance)")
+        
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        scrollView.contentOffset.y = 0
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension LoginViewController: UITextFieldDelegate {
