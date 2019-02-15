@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 import CoreBluetooth
 
 class NotificationCreateViewController: UIViewController, CBPeripheralManagerDelegate{
@@ -21,13 +22,11 @@ class NotificationCreateViewController: UIViewController, CBPeripheralManagerDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // 初期化
-        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
     }
     
     // 状態変化を取得
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-        print("periState\(peripheral.state)")
+        print("periState: \(peripheral.state)")
         
         switch peripheral.state {
             
@@ -109,14 +108,17 @@ class NotificationCreateViewController: UIViewController, CBPeripheralManagerDel
     
     // アドバタイズ開始ボタン
     @IBAction func pushAdvertiseBtn(_ sender: UIButton) {
+        /*
         let advertisementData = [CBAdvertisementDataLocalNameKey: "Test Device",
                                  CBAdvertisementDataServiceUUIDsKey: [self.serviceUUID]] as [String : Any]
         self.publishservice()
-        peripheralManager.startAdvertising(advertisementData)
+        peripheralManager.startAdvertising(advertisementData)*/
+        BLEConnectivity.manager.startAdvertise()
     }
     
     // アドバタイズ終了ボタン
     @IBAction func stopAdvertisingBtn(_ sender: UIButton) {
-        peripheralManager.stopAdvertising()
+        //peripheralManager.stopAdvertising()
+        BLEConnectivity.manager.stopAdvertise()
     }
 }

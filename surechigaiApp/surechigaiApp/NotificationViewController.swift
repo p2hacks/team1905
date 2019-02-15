@@ -31,8 +31,14 @@ class NotificationViewController: UIViewController, CBCentralManagerDelegate, CB
         notificationTableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     // スキャン開始ボタン
     @IBAction func pushScanBtn(_ sender: UIBarButtonItem) {
+        /*
         // スキャン開始
         print("スキャン開始")
         centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)
@@ -40,7 +46,8 @@ class NotificationViewController: UIViewController, CBCentralManagerDelegate, CB
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
             print("スキャン停止")
             self.centralManager.stopScan()
-        }
+        }*/
+        BLEConnectivity.manager.startScan()
     }
     
     // 状態変化を取得
