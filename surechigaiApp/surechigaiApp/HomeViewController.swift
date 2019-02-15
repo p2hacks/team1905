@@ -63,11 +63,15 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "toExchange") {
             //遷移先のUIViewControllerを取得
-            let navigation: UINavigationController = segue.destination as! UINavigationController
-            let nextVC = navigation.topViewController as! ExchangeProfileViewController
+            //let navigation: UINavigationController = segue.destination as! UINavigationController
+            //let nextVC = navigation.topViewController as! ExchangeProfileViewController
+            let nextVC: ExchangeProfileViewController = segue.destination as! ExchangeProfileViewController
             let results = realm.objects(Profile.self)
             //遷移先の変数に値を代入する
-            nextVC.myProfile = results[0]
+            guard results.isEmpty else {
+                nextVC.myProfile = results[0]
+                return
+            }
         }
     }
     
