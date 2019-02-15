@@ -146,6 +146,7 @@ extension P2PConnectivity: MCNearbyServiceBrowserDelegate {
         print(#function)
         print("found: \(peerID)")
         // 見つけたら即招待
+        // ToDo: ここにUI関連の処理を入れれば好きなUIにできる？
         browser.invitePeer(peerID, to: session, withContext: nil, timeout: 0)
     }
     

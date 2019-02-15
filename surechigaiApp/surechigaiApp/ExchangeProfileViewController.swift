@@ -34,6 +34,11 @@ class ExchangeProfileViewController: UIViewController {
         super.viewDidLoad()
         
         // ToDo: ハンドルネームと実名の表示切り替え
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
         
         // 接続の開始
         P2PConnectivity.manager.start(
@@ -41,16 +46,33 @@ class ExchangeProfileViewController: UIViewController {
             displayName: myProfile.name,
             stateChangeHandler: { state in
                 // 接続状況の変化した時の処理
-                self.stateLabel.text = String(state.rawValue)
+                DispatchQueue.main.async() {
+                    switch state {
+                    case .notConnected:
+                        self.stateLabel.text = "No connection"
+                    case .connecting:
+                        self.stateLabel.text = "Connecting..."
+                    case .connected:
+                        self.stateLabel.text = "Connected!"
+                    }
+                }
         }, recieveHandler: { data in
-            // データを受信した時の処理
-            self.recieveLabel.text = data
+            // データを受信した時の処理（UIの更新処理はmain thread で行う必要がある）
+            DispatchQueue.main.async() {
+                self.printMessage(message: data)
+            }
         }
         )
-        
+    }
+    
+    func printMessage(message: String) {
+        self.recieveLabel.text = message
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
         // 終了
         P2PConnectivity.manager.stop()
-        
     }
     
     
