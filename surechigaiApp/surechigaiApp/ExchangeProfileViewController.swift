@@ -25,9 +25,19 @@ class ExchangeProfileViewController: UIViewController {
     @IBOutlet weak var recieveLabel: UILabel!
     @IBOutlet weak var sendMsgTF: UITextField!
     
+    
+
+    
     @IBAction func sendBtnTapped(_ sender: Any) {
-        // データの送信
-        P2PConnectivity.manager.send(message: sendMsgTF.text!)
+        do {
+            // Profile → NSData
+            let codedProfile = try NSKeyedArchiver.archivedData(withRootObject: myProfile, requiringSecureCoding: false)
+            // データの送信
+            P2PConnectivity.manager.send(data: codedProfile)
+        } catch {
+            fatalError("archivedData failed with error: \(error)")
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -56,17 +66,28 @@ class ExchangeProfileViewController: UIViewController {
                         self.stateLabel.text = "Connected!"
                     }
                 }
-        }, recieveHandler: { data in
+        }, profileRecieveHandler: { data in
             // データを受信した時の処理（UIの更新処理はmain thread で行う必要がある）
             DispatchQueue.main.async() {
-                self.printMessage(message: data)
+                self.printData(recieveData: data)
             }
         }
         )
     }
     
-    func printMessage(message: String) {
-        self.recieveLabel.text = message
+    func printData(recieveData: Data) {
+        
+        do {
+            // NSData → Profile
+            let decoded = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(recieveData) as! Profile
+            // データの反映
+            self.recieveLabel.text = "名前：\(decoded.name)\n学籍番号：\(decoded.student_number)\n誕生日：\(decoded.birthDay)\n出身地：\(decoded.birthplace)\nコース：\(decoded.course)\n一年時クラス：\(decoded.part_of_class)\nハンドルネーム：\(decoded.handle)\nサークル：\(decoded.club)\n学年：\(decoded.grade)\n"
+            self.recieveLabel.sizeToFit()
+        } catch {
+            fatalError("archivedData failed with error: \(error)")
+        }
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
