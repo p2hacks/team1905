@@ -33,6 +33,7 @@
 		50016FD722155AA700F6C6D9 /* ExchangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FD622155AA700F6C6D9 /* ExchangeProfileViewController.swift */; };
 		50016FD922155AC500F6C6D9 /* ExchangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */; };
 		50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */; };
+		507FE68D2216D3C700872283 /* BLEConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FE68C2216D3C700872283 /* BLEConnectivity.swift */; };
 		50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81B220F1D4E00D09939 /* AppDelegate.swift */; };
 		50C8D81E220F1D4E00D09939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81D220F1D4E00D09939 /* ViewController.swift */; };
 		50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C8D81F220F1D4E00D09939 /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 		50016FD622155AA700F6C6D9 /* ExchangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeProfileViewController.swift; sourceTree = "<group>"; };
 		50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeProfile.storyboard; sourceTree = "<group>"; };
 		50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P2PConnectivity.swift; sourceTree = "<group>"; };
+		507FE68C2216D3C700872283 /* BLEConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConnectivity.swift; sourceTree = "<group>"; };
 		50C8D818220F1D4E00D09939 /* surechigaiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surechigaiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C8D81B220F1D4E00D09939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C8D81D220F1D4E00D09939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				50C8D84B220F502B00D09939 /* Model */,
 				50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */,
+				507FE68C2216D3C700872283 /* BLEConnectivity.swift */,
 				50016FD422115ACA00F6C6D9 /* CustomTextField.swift */,
 				50C8D81B220F1D4E00D09939 /* AppDelegate.swift */,
 				50C8D81D220F1D4E00D09939 /* ViewController.swift */,
@@ -362,6 +365,11 @@
 				TargetAttributes = {
 					50C8D817220F1D4E00D09939 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					50C8D82B220F1D5100D09939 = {
 						CreatedOnToolsVersion = 10.1;
@@ -601,6 +609,7 @@
 			files = (
 				50C8D84D220F552500D09939 /* Notification.swift in Sources */,
 				50C8D81E220F1D4E00D09939 /* ViewController.swift in Sources */,
+				507FE68D2216D3C700872283 /* BLEConnectivity.swift in Sources */,
 				50C8D84A220F502300D09939 /* Profile.swift in Sources */,
 				50016FD522115ACA00F6C6D9 /* CustomTextField.swift in Sources */,
 				32181EF122171B4400655BA9 /* PagingPerCellFlowLayout.swift in Sources */,

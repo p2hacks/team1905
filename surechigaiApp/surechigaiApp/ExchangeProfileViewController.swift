@@ -25,9 +25,6 @@ class ExchangeProfileViewController: UIViewController {
     @IBOutlet weak var recieveLabel: UILabel!
     @IBOutlet weak var sendMsgTF: UITextField!
     
-    
-
-    
     @IBAction func sendBtnTapped(_ sender: Any) {
         do {
             // Profile → NSData
