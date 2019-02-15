@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+// ToDo: ログインの可否はアラートで表示させたい
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,7 +20,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     @IBAction func pushSignUpButton(_ sender: UIButton) {
@@ -53,6 +56,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -63,4 +70,14 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
