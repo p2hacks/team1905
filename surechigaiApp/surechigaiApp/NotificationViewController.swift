@@ -16,6 +16,7 @@ class NotificationViewController: UIViewController, CBCentralManagerDelegate, CB
     
     // プロパティ定義
     var centralManager: CBCentralManager!
+    var peripheral: CBPeripheral!
     
     let serviceUUID = CBUUID(string: "0011")
     let charactericUUID = CBUUID(string: "0012")
@@ -34,7 +35,7 @@ class NotificationViewController: UIViewController, CBCentralManagerDelegate, CB
     @IBAction func pushScanBtn(_ sender: UIBarButtonItem) {
         // スキャン開始
         print("スキャン開始")
-        centralManager.scanForPeripherals(withServices: nil, options: nil)
+        centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)
         // 5秒後スキャン停止
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
             print("スキャン停止")
@@ -50,9 +51,9 @@ class NotificationViewController: UIViewController, CBCentralManagerDelegate, CB
     // スキャン結果取得
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print("peripheral: \(peripheral)")
-        
+        self.peripheral = peripheral
         // 見つけたペリフェラルへの接続開始
-        self.centralManager.connect(peripheral, options: nil)
+        self.centralManager.connect(self.peripheral, options: nil)
     }
     
     //  ペリフェラルへの接続成功時
@@ -76,15 +77,36 @@ class NotificationViewController: UIViewController, CBCentralManagerDelegate, CB
         }
         print("\(services.count)個のサービスを発見。\(services)")
         
-        peripheral.discoverCharacteristics([charactericUUID], for: (peripheral.services?.first)!)
+        //  サービスを見つけたらすぐにキャラクタリスティックを取得
+        for obj in services {
+            peripheral.discoverCharacteristics([charactericUUID], for: obj)
+        }
     }
     
     // キャラクタリスティック検索結果の取得
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         if let characteristics = service.characteristics {
             print("\(characteristics.count)個のキャラクタリスティックを発見。\(characteristics)")
+            
+            peripheral.readValue(for: characteristics[0])
         }
     }
+    
+    // Read
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        if let error = error {
+            print("Failed... error: \(error)")
+            return
+        }
+        print("Succeeded! service uuid: \(characteristic.service.uuid), characteristic uuid: \(characteristic.uuid), value: \(String(describing: characteristic.value))")
+        
+        // バッテリーレベルのキャラクタリスティックかどうかを判定
+        if characteristic.uuid.isEqual(CBUUID(string: "0012")) {
+            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+            print(text!)
+        }
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

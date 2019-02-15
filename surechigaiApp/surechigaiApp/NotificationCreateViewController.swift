@@ -70,14 +70,6 @@ class NotificationCreateViewController: UIViewController, CBPeripheralManagerDel
         
         // サービスを Peripheral Manager にセット
         self.peripheralManager.add(service)
-        
-        let msg: String = "あかさたな"
-        
-        let data: NSData! = msg.data(using: String.Encoding.utf8, allowLossyConversion:true)! as NSData
-        print("data: \(String(describing: data))")
-        
-        self.characteristic.value = data! as Data;
-        
     }
     
     // サービス追加結果を取得
@@ -98,10 +90,28 @@ class NotificationCreateViewController: UIViewController, CBPeripheralManagerDel
         print("Advertising success")
     }
     
+    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
+        
+        if request.characteristic.uuid.isEqual(characteristic.uuid) {
+            
+            // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
+            let msg: String = "あかさたな"
+            
+            let data: Data = msg.data(using: String.Encoding.utf8, allowLossyConversion:true)!
+            print("data: \(String(describing: data))")
+            self.characteristic.value = data
+            request.value = self.characteristic.value
+            
+            // リクエストに応答
+            peripheralManager.respond(to: request, withResult: .success)
+        }
+    }
+    
     // アドバタイズ開始ボタン
     @IBAction func pushAdvertiseBtn(_ sender: UIButton) {
         let advertisementData = [CBAdvertisementDataLocalNameKey: "Test Device",
                                  CBAdvertisementDataServiceUUIDsKey: [self.serviceUUID]] as [String : Any]
+        self.publishservice()
         peripheralManager.startAdvertising(advertisementData)
     }
     
