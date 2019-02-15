@@ -77,11 +77,13 @@ class ProfileRegistrationViewController: UIViewController {
         
         if isFirstResistration {
             createProfile(data: profile)
+            self.performSegue(withIdentifier: "toMain", sender: nil)
         } else {
             updateProfile(data: profile)
+            navigationController?.popViewController(animated: true)
         }
         
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
         
     }
     

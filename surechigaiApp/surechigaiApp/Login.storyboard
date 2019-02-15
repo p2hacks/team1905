@@ -36,20 +36,29 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-ew-8lD">
-                                        <rect key="frame" x="133" y="337" width="108" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="アカウント作成"/>
-                                        <connections>
-                                            <action selector="pushSignUpButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="Hz8-tl-3r2"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWs-2I-aO6">
-                                        <rect key="frame" x="156" y="443" width="62" height="30"/>
+                                        <rect key="frame" x="156" y="312" width="62" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="ログイン"/>
                                         <connections>
                                             <action selector="pushLoginButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="TM4-fE-8Vq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-YC-qXT" userLabel="Sign Up">
+                                        <rect key="frame" x="106" y="391" width="162" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="アカウント作成"/>
+                                        <connections>
+                                            <action selector="pushTouroku:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="ey4-3N-BMf"/>
+                                            <segue destination="PdG-kc-cUp" kind="show" identifier="toSignUp" id="cvN-G6-Qxn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-ew-8lD">
+                                        <rect key="frame" x="120" y="514" width="134" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="アカウント作成(旧)"/>
+                                        <connections>
+                                            <action selector="pushSignUpButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="Hz8-tl-3r2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -79,6 +88,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRb-5c-aEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="76"/>
+        </scene>
+        <!--SignUp-->
+        <scene sceneID="a6F-vp-yaD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" id="PdG-kc-cUp" userLabel="SignUp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ug2-Ts-FmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="160"/>
         </scene>
     </scenes>
 </document>

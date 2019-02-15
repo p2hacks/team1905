@@ -80,6 +80,7 @@
                                 <state key="normal" title="登録"/>
                                 <connections>
                                     <action selector="onTapRegistrationBtn:" destination="rBh-io-cwg" eventType="touchUpInside" id="Xch-0Z-84W"/>
+                                    <segue destination="p8e-I3-qB8" kind="presentation" identifier="toMain" id="tc0-rX-7Iz"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="学年" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFQ-cB-pog" customClass="CustomTextField" customModule="surechigaiApp" customModuleProvider="target">
@@ -108,6 +109,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBw-tr-LSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29.600000000000001" y="181.25937031484258"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="O9q-9k-xYA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="p8e-I3-qB8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fmb-kx-c3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="163"/>
         </scene>
     </scenes>
 </document>

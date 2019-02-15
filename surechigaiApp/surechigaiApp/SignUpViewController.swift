@@ -1,8 +1,8 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  surechigaiApp
 //
-//  Created by 前田陸 on 2019/02/10.
+//  Created by AIRU ISHIKURA on 2019/02/15.
 //  Copyright © 2019 川村周也. All rights reserved.
 //
 
@@ -10,16 +10,14 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-// ToDo: ログインの可否はアラートで表示させたい
+class SignUpViewController: UIViewController {
 
-class LoginViewController: UIViewController {
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var pushLogin: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var pushSignUp: UIButton!
     
     var screenHeight:CGFloat!
     var screenWidth:CGFloat!
@@ -28,8 +26,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.delegate = self as? UIScrollViewDelegate
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        emailTextField.delegate = self as? UITextFieldDelegate
+        passwordTextField.delegate = self as? UITextFieldDelegate
         
         // 画面サイズ取得
         let screenSize: CGRect = UIScreen.main.bounds
@@ -44,6 +42,8 @@ class LoginViewController: UIViewController {
         
         // スクロールの跳ね返り無し
         scrollView.bounces = false
+
+        // Do any additional setup after loading the view.
     }
     
     @IBAction func pushSignUpButton(_ sender: UIButton) {
@@ -55,36 +55,14 @@ class LoginViewController: UIViewController {
             if let user = user {
                 print(user as Any)
                 self.dismiss(animated: true, completion: nil)
-                self.performSegue(withIdentifier: "toHome", sender: nil)
+                
+                self.performSegue(withIdentifier: "toProfileRegistration", sender: nil)
             } else {
                 print("登録できませんでした")
                 self.alert(title: "登録できませんでした", message: "登録できませんでした", okText: "OK")
             }
         }
     }
-    
-    @IBAction func pushLoginButton(_ sender: UIButton) {
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) {
-            (user, error) in
-            if error != nil {
-                print("ログインできませんでした")
-                self.alert(title: "ログインできませんでした", message: "ログインできませんでした", okText: "OK")
-            }
-            if user != nil {
-                self.dismiss(animated: true, completion: nil)
-                
-                self.performSegue(withIdentifier: "toHome", sender: nil)
-            } else {
-                print("ログインできませんでした")
-                self.alert(title: "ログインできませんでした", message: "ログインできませんでした", okText: "OK")
-            }
-        }
-    }
-    
-    @IBAction func pushTouroku(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toSignUp", sender: nil)
-    }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -118,28 +96,24 @@ class LoginViewController: UIViewController {
         let info = notification.userInfo!
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        let bottomTextField = pushLogin.frame.origin.y + pushLogin.frame.height
+        let bottomTextField = pushSignUp.frame.origin.y + pushSignUp.frame.height
         let topKeyboard = screenHeight - keyboardFrame.size.height
         let distance = bottomTextField - topKeyboard
         
         if distance >= 0 {
             scrollView.contentOffset.y = distance + 30.0
         }
-        
-        //        調整用
-        //        print("hyouji bottomTextField : \(bottomTextField)")
-        //        print("hyouji pushLogin.frame.origin.y : \(pushLogin.frame.origin.y)")
-        //        print("hyouji pushLogin.frame.height : \(pushLogin.frame.height)")
-        //        print("hyouji topKeyboard : \(topKeyboard)")
-        //        print("hyouji screenHeight : \(String(describing: screenHeight))")
-        //        print("hyouji keyboardFrame.size.height : \(keyboardFrame.size.height)")
-        //        print("hyouji distance : \(distance)")
-        
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
         scrollView.contentOffset.y = 0
     }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toLogin", sender: nil)
+    }
+    
+    
     
     func alert(title: String, message: String, okText: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -149,24 +123,16 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
-}
 
-extension LoginViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // キーボードを閉じる
-        textField.resignFirstResponder()
-        return true
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
+
 }
