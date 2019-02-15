@@ -17,6 +17,12 @@
 		32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */; };
 		32181ECB2211AA9A00655BA9 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181ECA2211AA9A00655BA9 /* Notification.storyboard */; };
 		32181ECD2211AAAC00655BA9 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181ECC2211AAAC00655BA9 /* NotificationViewController.swift */; };
+		32181EDF2216D50F00655BA9 /* RegisterProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181EDE2216D50F00655BA9 /* RegisterProfile.storyboard */; };
+		32181EE12216D52F00655BA9 /* RegisterProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EE02216D52F00655BA9 /* RegisterProfileViewController.swift */; };
+		32181EEB2217117500655BA9 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EEA2217117500655BA9 /* CarouselView.swift */; };
+		32181EEE2217122900655BA9 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EEC2217122900655BA9 /* CarouselCell.swift */; };
+		32181EEF2217122900655BA9 /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32181EED2217122900655BA9 /* CarouselCell.xib */; };
+		32181EF122171B4400655BA9 /* PagingPerCellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EF022171B4400655BA9 /* PagingPerCellFlowLayout.swift */; };
 		32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83CC2210590B0034C094 /* GoogleService-Info.plist */; };
 		32EB83CF22105F6C0034C094 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB83CE22105F6B0034C094 /* LoginViewController.swift */; };
 		32EB83D122105F800034C094 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83D022105F800034C094 /* Login.storyboard */; };
@@ -70,6 +76,12 @@
 		32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCreateViewController.swift; sourceTree = "<group>"; };
 		32181ECA2211AA9A00655BA9 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		32181ECC2211AAAC00655BA9 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		32181EDE2216D50F00655BA9 /* RegisterProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterProfile.storyboard; sourceTree = "<group>"; };
+		32181EE02216D52F00655BA9 /* RegisterProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProfileViewController.swift; sourceTree = "<group>"; };
+		32181EEA2217117500655BA9 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		32181EEC2217122900655BA9 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		32181EED2217122900655BA9 /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
+		32181EF022171B4400655BA9 /* PagingPerCellFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingPerCellFlowLayout.swift; sourceTree = "<group>"; };
 		32EB83CC2210590B0034C094 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32EB83CE22105F6B0034C094 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32EB83D022105F800034C094 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -230,6 +242,12 @@
 				50C8D824220F1D5100D09939 /* LaunchScreen.storyboard */,
 				50C8D827220F1D5100D09939 /* Info.plist */,
 				32EB83CC2210590B0034C094 /* GoogleService-Info.plist */,
+				32181EDE2216D50F00655BA9 /* RegisterProfile.storyboard */,
+				32181EE02216D52F00655BA9 /* RegisterProfileViewController.swift */,
+				32181EEA2217117500655BA9 /* CarouselView.swift */,
+				32181EEC2217122900655BA9 /* CarouselCell.swift */,
+				32181EED2217122900655BA9 /* CarouselCell.xib */,
+				32181EF022171B4400655BA9 /* PagingPerCellFlowLayout.swift */,
 			);
 			path = surechigaiApp;
 			sourceTree = "<group>";
@@ -383,8 +401,10 @@
 				50C8D826220F1D5100D09939 /* LaunchScreen.storyboard in Resources */,
 				03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */,
 				50C8D823220F1D5100D09939 /* Assets.xcassets in Resources */,
+				32181EDF2216D50F00655BA9 /* RegisterProfile.storyboard in Resources */,
 				03CD3307220F585E006B7BCA /* home_1x.png in Resources */,
 				50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */,
+				32181EEF2217122900655BA9 /* CarouselCell.xib in Resources */,
 				03CD32FB220F4EB9006B7BCA /* Home.storyboard in Resources */,
 				32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */,
 				03CD32FF220F53D5006B7BCA /* Setting.storyboard in Resources */,
@@ -583,11 +603,15 @@
 				50C8D81E220F1D4E00D09939 /* ViewController.swift in Sources */,
 				50C8D84A220F502300D09939 /* Profile.swift in Sources */,
 				50016FD522115ACA00F6C6D9 /* CustomTextField.swift in Sources */,
+				32181EF122171B4400655BA9 /* PagingPerCellFlowLayout.swift in Sources */,
+				32181EEE2217122900655BA9 /* CarouselCell.swift in Sources */,
 				32EB83CF22105F6C0034C094 /* LoginViewController.swift in Sources */,
+				32181EEB2217117500655BA9 /* CarouselView.swift in Sources */,
 				50016FD722155AA700F6C6D9 /* ExchangeProfileViewController.swift in Sources */,
 				50016FC92210802800F6C6D9 /* ProfileRegistrationViewController.swift in Sources */,
 				32F612C822119649000E2C6A /* SettingTableViewController.swift in Sources */,
 				50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */,
+				32181EE12216D52F00655BA9 /* RegisterProfileViewController.swift in Sources */,
 				32181ECD2211AAAC00655BA9 /* NotificationViewController.swift in Sources */,
 				03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */,
 				50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */,
@@ -768,7 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V85Y4GF6BG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = surechigaiApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -787,7 +811,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V85Y4GF6BG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = surechigaiApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
