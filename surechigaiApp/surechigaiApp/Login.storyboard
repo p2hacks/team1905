@@ -18,53 +18,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-m7-NVW">
-                                <rect key="frame" x="87.666666666666686" y="274" width="200" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qsj-Gm-q1g">
-                                <rect key="frame" x="87.666666666666686" y="144" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="AqW-OP-Gda"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWs-2I-aO6">
-                                <rect key="frame" x="156.66666666666666" y="534" width="62" height="30"/>
-                                <state key="normal" title="ログイン"/>
-                                <connections>
-                                    <action selector="pushLoginButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="TM4-fE-8Vq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-ew-8lD">
-                                <rect key="frame" x="133.66666666666666" y="404" width="108" height="30"/>
-                                <state key="normal" title="アカウント作成"/>
-                                <connections>
-                                    <action selector="pushSignUpButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="Hz8-tl-3r2"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAC-2K-6XA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-m7-NVW">
+                                        <rect key="frame" x="87" y="228" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qsj-Gm-q1g">
+                                        <rect key="frame" x="87" y="122" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWs-2I-aO6">
+                                        <rect key="frame" x="156" y="312" width="62" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="ログイン"/>
+                                        <connections>
+                                            <action selector="pushLoginButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="TM4-fE-8Vq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-YC-qXT" userLabel="Sign Up">
+                                        <rect key="frame" x="106" y="391" width="162" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="アカウント作成"/>
+                                        <connections>
+                                            <action selector="pushTouroku:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="ey4-3N-BMf"/>
+                                            <segue destination="PdG-kc-cUp" kind="show" identifier="toSignUp" id="cvN-G6-Qxn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-ew-8lD">
+                                        <rect key="frame" x="120" y="514" width="134" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="アカウント作成(旧)"/>
+                                        <connections>
+                                            <action selector="pushSignUpButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="Hz8-tl-3r2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Eh5-m7-NVW" firstAttribute="width" secondItem="qsj-Gm-q1g" secondAttribute="width" id="384-jU-0a6"/>
-                            <constraint firstItem="qsj-Gm-q1g" firstAttribute="top" secondItem="AcD-OJ-zHs" secondAttribute="top" constant="100" id="AaN-FU-m0i"/>
-                            <constraint firstItem="qsj-Gm-q1g" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="BZ0-AD-PeF"/>
-                            <constraint firstItem="mQb-ew-8lD" firstAttribute="top" secondItem="Eh5-m7-NVW" secondAttribute="bottom" constant="100" id="Bsg-EL-usV"/>
-                            <constraint firstItem="mQb-ew-8lD" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="IZe-1b-AU9"/>
-                            <constraint firstItem="NWs-2I-aO6" firstAttribute="top" secondItem="mQb-ew-8lD" secondAttribute="bottom" constant="100" id="Ln7-fU-rwB"/>
-                            <constraint firstItem="Eh5-m7-NVW" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="Pbv-5B-g4e"/>
-                            <constraint firstItem="Eh5-m7-NVW" firstAttribute="top" secondItem="qsj-Gm-q1g" secondAttribute="bottom" constant="100" id="T1d-IB-F11"/>
-                            <constraint firstItem="NWs-2I-aO6" firstAttribute="centerX" secondItem="qQm-tM-XfE" secondAttribute="centerX" id="d0j-Se-CCi"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AcD-OJ-zHs"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="qsj-Gm-q1g" id="mlZ-m2-n6z"/>
                         <outlet property="passwordTextField" destination="Eh5-m7-NVW" id="asm-EH-KUm"/>
+                        <outlet property="pushLogin" destination="NWs-2I-aO6" id="RUM-IT-4e6"/>
+                        <outlet property="scrollView" destination="xAC-2K-6XA" id="hk6-we-Rd9"/>
                         <segue destination="GWo-u6-Xdn" kind="show" identifier="toHome" id="26i-zT-DF5"/>
                     </connections>
                 </viewController>
@@ -81,6 +88,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRb-5c-aEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="76"/>
+        </scene>
+        <!--SignUp-->
+        <scene sceneID="a6F-vp-yaD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" id="PdG-kc-cUp" userLabel="SignUp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ug2-Ts-FmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="160"/>
         </scene>
     </scenes>
 </document>
