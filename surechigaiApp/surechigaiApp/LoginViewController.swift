@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
                 print("登録できませんでした\(String(describing: error))")
+                self.alert(title: "登録できませんでした", message: "登録できませんでした", okText: "OK")
             }
             if let user = user {
                 print(user as Any)
@@ -58,6 +59,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "toHome", sender: nil)
             } else {
                 print("登録できませんでした")
+                self.alert(title: "登録できませんでした", message: "登録できませんでした", okText: "OK")
             }
         }
     }
@@ -67,6 +69,7 @@ class LoginViewController: UIViewController {
             (user, error) in
             if error != nil {
                 print("ログインできませんでした")
+                self.alert(title: "ログインできませんでした", message: "ログインできませんでした", okText: "OK")
             }
             if user != nil {
                 self.dismiss(animated: true, completion: nil)
@@ -74,6 +77,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "toHome", sender: nil)
             } else {
                 print("ログインできませんでした")
+                self.alert(title: "ログインできませんでした", message: "ログインできませんでした", okText: "OK")
             }
         }
     }
@@ -131,6 +135,14 @@ class LoginViewController: UIViewController {
     
     @objc func keyboardWillHide(_ notification: Notification) {
         scrollView.contentOffset.y = 0
+    }
+    
+    func alert(title: String, message: String, okText: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
+        alert.addAction(okayButton)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*
