@@ -20,7 +20,7 @@ class P2PConnectivity: NSObject {
     }
     
     private var stateChangeHandler: ((MCSessionState) -> Void)? = nil
-    private var recieveHandler: ((String) -> Void)? = nil
+    private var profileRecieveHandler: ((Data) -> Void)? = nil
     
     private var session: MCSession!
     private var advertiser: MCNearbyServiceAdvertiser!
@@ -30,9 +30,9 @@ class P2PConnectivity: NSObject {
     }
     
     func start(serviceType: String, displayName: String, stateChangeHandler: ((MCSessionState) -> Void)? = nil,
-               recieveHandler: ((String) -> Void)? = nil) {
+               profileRecieveHandler: ((Data) -> Void)? = nil) {
         self.stateChangeHandler = stateChangeHandler
-        self.recieveHandler = recieveHandler
+        self.profileRecieveHandler = profileRecieveHandler
         
         let peerID = MCPeerID(displayName: displayName)
         
@@ -56,10 +56,9 @@ class P2PConnectivity: NSObject {
     }
     
     @discardableResult
-    func send(message: String) -> Bool {
+    func send(data: Data) -> Bool {
         guard case .connected = state else { return false }
         
-        let data = message.data(using: .utf8) ?? Data()
         do {
             try session.send(data, toPeers: session.connectedPeers, with: .reliable)
         } catch {
@@ -76,7 +75,7 @@ class P2PConnectivity: NSObject {
 extension P2PConnectivity: MCSessionDelegate {
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        recieveHandler?(String(data: data, encoding: .utf8) ?? "")
+        profileRecieveHandler?(data)
     }
     
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
@@ -146,6 +145,7 @@ extension P2PConnectivity: MCNearbyServiceBrowserDelegate {
         print(#function)
         print("found: \(peerID)")
         // 見つけたら即招待
+        // ToDo: ここにUI関連の処理を入れれば好きなUIにできる？
         browser.invitePeer(peerID, to: session, withContext: nil, timeout: 0)
     }
     

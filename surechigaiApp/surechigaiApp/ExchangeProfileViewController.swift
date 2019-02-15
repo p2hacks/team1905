@@ -25,15 +25,30 @@ class ExchangeProfileViewController: UIViewController {
     @IBOutlet weak var recieveLabel: UILabel!
     @IBOutlet weak var sendMsgTF: UITextField!
     
+    
+
+    
     @IBAction func sendBtnTapped(_ sender: Any) {
-        // データの送信
-        P2PConnectivity.manager.send(message: sendMsgTF.text!)
+        do {
+            // Profile → NSData
+            let codedProfile = try NSKeyedArchiver.archivedData(withRootObject: myProfile, requiringSecureCoding: false)
+            // データの送信
+            P2PConnectivity.manager.send(data: codedProfile)
+        } catch {
+            fatalError("archivedData failed with error: \(error)")
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // ToDo: ハンドルネームと実名の表示切り替え
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
         
         // 接続の開始
         P2PConnectivity.manager.start(
@@ -41,16 +56,44 @@ class ExchangeProfileViewController: UIViewController {
             displayName: myProfile.name,
             stateChangeHandler: { state in
                 // 接続状況の変化した時の処理
-                self.stateLabel.text = String(state.rawValue)
-        }, recieveHandler: { data in
-            // データを受信した時の処理
-            self.recieveLabel.text = data
+                DispatchQueue.main.async() {
+                    switch state {
+                    case .notConnected:
+                        self.stateLabel.text = "No connection"
+                    case .connecting:
+                        self.stateLabel.text = "Connecting..."
+                    case .connected:
+                        self.stateLabel.text = "Connected!"
+                    }
+                }
+        }, profileRecieveHandler: { data in
+            // データを受信した時の処理（UIの更新処理はmain thread で行う必要がある）
+            DispatchQueue.main.async() {
+                self.printData(recieveData: data)
+            }
         }
         )
+    }
+    
+    func printData(recieveData: Data) {
         
+        do {
+            // NSData → Profile
+            let decoded = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(recieveData) as! Profile
+            // データの反映
+            self.recieveLabel.text = "名前：\(decoded.name)\n学籍番号：\(decoded.student_number)\n誕生日：\(decoded.birthDay)\n出身地：\(decoded.birthplace)\nコース：\(decoded.course)\n一年時クラス：\(decoded.part_of_class)\nハンドルネーム：\(decoded.handle)\nサークル：\(decoded.club)\n学年：\(decoded.grade)\n"
+            self.recieveLabel.sizeToFit()
+        } catch {
+            fatalError("archivedData failed with error: \(error)")
+        }
+        
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
         // 終了
         P2PConnectivity.manager.stop()
-        
     }
     
     
