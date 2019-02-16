@@ -30,6 +30,9 @@ class NoticeListViewController: UIViewController {
     }
     
     @IBAction func pushBackBtn(_ sender: UIButton) {
+        // アイコンに表示されているバッジの値を0にする
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         self.dismiss(animated: true, completion: nil)
     }
     
