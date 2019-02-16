@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
 
+    var noticeListCell = NoticeListViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -80,6 +81,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Realm.Configuration.defaultConfiguration = config
         
         return true
+    }
+    
+    // Push通知受信時とPush通知をタッチして起動したときに呼ばれる
+    private func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        switch application.applicationState {
+        case .inactive:
+            // アプリがバックグラウンドにいる状態で、Push通知から起動したとき
+            break
+        case .active:
+            // アプリ起動時にPush通知を受信したとき
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.noticeListCell.addCell()
+            break
+        case .background:
+            // アプリがバックグラウンドにいる状態でPush通知を受信したとき
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.noticeListCell.addCell()
+            break
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

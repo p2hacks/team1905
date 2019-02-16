@@ -235,13 +235,15 @@ extension BLEConnectivity: CBPeripheralDelegate {
             return
         }
         print("Succeeded! service uuid: \(characteristic.service.uuid), characteristic uuid: \(characteristic.uuid), value: \(String(describing: characteristic.value))")
-        // 通知
-        setupNotice()
+        
         // バッテリーレベルのキャラクタリスティックかどうかを判定
         if characteristic.uuid.isEqual(CBUUID(string: "0012")) {
             notificationRecieveHandler?(characteristic.value!)
             let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
             print(text!)
+            
+            // 通知
+            setupNotice()
         }
     }
     

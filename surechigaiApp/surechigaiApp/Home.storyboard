@@ -101,7 +101,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oU0-5w-I2K"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yMQ-pn-UmB"/>
+                    <navigationItem key="navigationItem" id="yMQ-pn-UmB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="lvF-PZ-zwU">
+                            <connections>
+                                <segue destination="JpY-Rn-DAL" kind="showDetail" identifier="toNoticeList" id="xOd-lY-VbA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="birthPlaceLabel" destination="Grc-nq-OMf" id="Kr9-O9-pKS"/>
@@ -118,6 +124,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMC-Zc-WBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2240.8000000000002" y="-525.78710644677665"/>
+        </scene>
+        <!--NoticeList-->
+        <scene sceneID="2BO-xe-Q5q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NoticeList" id="JpY-Rn-DAL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFF-I0-wTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2960" y="-904"/>
         </scene>
         <!--ProfileRegistration-->
         <scene sceneID="9gb-Dh-1cP">
