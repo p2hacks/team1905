@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+/*
 enum pickerType {
     case course
     case firstClass
     case grade
     case birthDay
-}
+}*/
 
 // inputView = InputLogic.manager.coursePickerViewと書けば使えるようにしたい。
 
