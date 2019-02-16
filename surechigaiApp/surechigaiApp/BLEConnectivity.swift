@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import UserNotifications
 
 // なぜかボタンを二回押さないとできない。
 
@@ -121,6 +122,29 @@ class BLEConnectivity: NSObject {
         return true
     }
     
+    // push通知の設定
+    func setupNotice() {
+        let center = UNUserNotificationCenter.current()
+        // 通知内容の設定
+        let content = UNMutableNotificationContent()
+        
+        content.title = "surechigaiApp"
+        content.body = "新規の広告を受信しました。"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: " Identifier", content: content, trigger: trigger)
+        
+        // 通知を登録
+        center.add(request) { (error : Error?) in
+            if error != nil {
+                // エラー処理
+            }
+        }
+        // 通知をセット
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
 }
 
 extension BLEConnectivity: CBPeripheralManagerDelegate {
@@ -211,7 +235,8 @@ extension BLEConnectivity: CBPeripheralDelegate {
             return
         }
         print("Succeeded! service uuid: \(characteristic.service.uuid), characteristic uuid: \(characteristic.uuid), value: \(String(describing: characteristic.value))")
-        
+        // 通知
+        setupNotice()
         // バッテリーレベルのキャラクタリスティックかどうかを判定
         if characteristic.uuid.isEqual(CBUUID(string: "0012")) {
             notificationRecieveHandler?(characteristic.value!)
