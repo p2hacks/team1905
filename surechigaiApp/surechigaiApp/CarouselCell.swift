@@ -10,9 +10,31 @@ import UIKit
 
 class CarouselCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var historyLabel: UILabel!
+    @IBOutlet weak var historyTimeLabel: UILabel!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setup()
+    }
+    
+    func setup() {
+        // ここでセットアップする
     }
 
+    @IBAction func pushProfileBtn(_ sender: UIButton) {
+    }
+    @IBAction func pushNotificationBtn(_ sender: UIButton) {
+    }
+    @IBAction func pushHistoryBtn(_ sender: UIButton) {
+    }
 }
