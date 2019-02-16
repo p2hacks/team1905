@@ -13,6 +13,9 @@ class P2PConnectivity: NSObject {
     
     static let manager = P2PConnectivity()
     
+    static var peerIDs : [MCPeerID] = []
+    static var withDiscoveryInfos : [String : String] = [:]
+    
     var state = MCSessionState.notConnected {
         didSet {
             stateChangeHandler?(state)
@@ -22,7 +25,7 @@ class P2PConnectivity: NSObject {
     private var stateChangeHandler: ((MCSessionState) -> Void)? = nil
     private var profileRecieveHandler: ((Data) -> Void)? = nil
     
-    private var session: MCSession!
+    var session: MCSession!
     private var advertiser: MCNearbyServiceAdvertiser!
     private var browser: MCNearbyServiceBrowser!
     
@@ -146,7 +149,10 @@ extension P2PConnectivity: MCNearbyServiceBrowserDelegate {
         print("found: \(peerID)")
         // 見つけたら即招待
         // ToDo: ここにUI関連の処理を入れれば好きなUIにできる？
-        browser.invitePeer(peerID, to: session, withContext: nil, timeout: 0)
+        //browser.invitePeer(peerID, to: session, withContext: nil, timeout: 0)
+        P2PConnectivity.peerIDs.append(peerID)
+        print(P2PConnectivity.peerIDs)
+        
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {

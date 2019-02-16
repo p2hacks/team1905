@@ -37,6 +37,11 @@ class ExchangeProfileViewController: UIViewController {
         
     }
     
+    @IBAction func selectWaitingBtn(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toSelectWaiting", sender: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

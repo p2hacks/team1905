@@ -40,6 +40,15 @@
                                     <action selector="sendBtnTapped:" destination="gBt-Io-NgE" eventType="touchUpInside" id="D6J-FZ-v0u"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjF-yc-d4m">
+                                <rect key="frame" x="164" y="533" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="テスト"/>
+                                <connections>
+                                    <action selector="selectWaitingBtn:" destination="gBt-Io-NgE" eventType="touchUpInside" id="5I7-VV-owL"/>
+                                    <segue destination="97h-XT-meA" kind="show" identifier="toSelectWaiting" id="cxU-aE-7WD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rNk-hf-NDa"/>
@@ -53,6 +62,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eaa-sB-XZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1112.8" y="158.77061469265368"/>
+        </scene>
+        <!--SelectWaiting-->
+        <scene sceneID="Dyd-Mj-cm0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectWaiting" id="97h-XT-meA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PNk-l2-7Kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1753" y="163"/>
         </scene>
     </scenes>
 </document>
