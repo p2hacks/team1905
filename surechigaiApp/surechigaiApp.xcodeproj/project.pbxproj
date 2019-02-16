@@ -13,6 +13,9 @@
 		03CD330A220F5A65006B7BCA /* Ad_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD3309220F5A65006B7BCA /* Ad_1x.png */; };
 		03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD330C220F5AB7006B7BCA /* Setting_1x.png */; };
 		03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD330E220F5F05006B7BCA /* HomeViewController.swift */; };
+		321585E42218203B00E96890 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = 321585E12218203A00E96890 /* box.png */; };
+		321585E52218203B00E96890 /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 321585E22218203A00E96890 /* history.png */; };
+		321585E62218203B00E96890 /* prof.png in Resources */ = {isa = PBXBuildFile; fileRef = 321585E32218203B00E96890 /* prof.png */; };
 		32181EC72211AA4A00655BA9 /* NotificationCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181EC62211AA4A00655BA9 /* NotificationCreate.storyboard */; };
 		32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */; };
 		32181ECB2211AA9A00655BA9 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181ECA2211AA9A00655BA9 /* Notification.storyboard */; };
@@ -77,6 +80,9 @@
 		03CD330C220F5AB7006B7BCA /* Setting_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting_1x.png; sourceTree = "<group>"; };
 		03CD330E220F5F05006B7BCA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-surechigaiAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-surechigaiAppTests/Pods-surechigaiAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		321585E12218203A00E96890 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box.png; path = ../../../../Downloads/box.png; sourceTree = "<group>"; };
+		321585E22218203A00E96890 /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history.png; path = ../../../../Downloads/history.png; sourceTree = "<group>"; };
+		321585E32218203B00E96890 /* prof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prof.png; path = ../../../../Downloads/prof.png; sourceTree = "<group>"; };
 		32181EC62211AA4A00655BA9 /* NotificationCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationCreate.storyboard; sourceTree = "<group>"; };
 		32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCreateViewController.swift; sourceTree = "<group>"; };
 		32181ECA2211AA9A00655BA9 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
@@ -189,6 +195,16 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		321585E02218202900E96890 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				321585E12218203A00E96890 /* box.png */,
+				321585E22218203A00E96890 /* history.png */,
+				321585E32218203B00E96890 /* prof.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		49894DFB1A86D8B4817CCFF7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +243,7 @@
 		50C8D81A220F1D4E00D09939 /* surechigaiApp */ = {
 			isa = PBXGroup;
 			children = (
+				321585E02218202900E96890 /* image */,
 				32181EF42217A85C00655BA9 /* SignUp.storyboard */,
 				32181EF22217A84500655BA9 /* SignUpViewController.swift */,
 				50C8D84B220F502B00D09939 /* Model */,
@@ -418,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321585E42218203B00E96890 /* box.png in Resources */,
 				50C8D826220F1D5100D09939 /* LaunchScreen.storyboard in Resources */,
 				03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */,
 				50C8D823220F1D5100D09939 /* Assets.xcassets in Resources */,
@@ -429,6 +447,7 @@
 				03CD32FB220F4EB9006B7BCA /* Home.storyboard in Resources */,
 				32181EF52217A85C00655BA9 /* SignUp.storyboard in Resources */,
 				32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */,
+				321585E52218203B00E96890 /* history.png in Resources */,
 				03CD32FF220F53D5006B7BCA /* Setting.storyboard in Resources */,
 				50016FCB2210848400F6C6D9 /* ProfileRegistration.storyboard in Resources */,
 				32181EC72211AA4A00655BA9 /* NotificationCreate.storyboard in Resources */,
@@ -436,6 +455,7 @@
 				32EB83D122105F800034C094 /* Login.storyboard in Resources */,
 				32181ECB2211AA9A00655BA9 /* Notification.storyboard in Resources */,
 				50016FD922155AC500F6C6D9 /* ExchangeProfile.storyboard in Resources */,
+				321585E62218203B00E96890 /* prof.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
