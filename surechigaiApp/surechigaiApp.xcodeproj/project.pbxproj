@@ -13,6 +13,8 @@
 		03CD330A220F5A65006B7BCA /* Ad_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD3309220F5A65006B7BCA /* Ad_1x.png */; };
 		03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD330C220F5AB7006B7BCA /* Setting_1x.png */; };
 		03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD330E220F5F05006B7BCA /* HomeViewController.swift */; };
+		321585E822184C7E00E96890 /* SelectWaiting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321585E722184C7E00E96890 /* SelectWaiting.storyboard */; };
+		321585EA22184C9200E96890 /* SelectWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321585E922184C9200E96890 /* SelectWaitingViewController.swift */; };
 		32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */; };
 		32181EDF2216D50F00655BA9 /* RegisterProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181EDE2216D50F00655BA9 /* RegisterProfile.storyboard */; };
 		32181EEB2217117500655BA9 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EEA2217117500655BA9 /* CarouselView.swift */; };
@@ -83,6 +85,8 @@
 		03CD330C220F5AB7006B7BCA /* Setting_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting_1x.png; sourceTree = "<group>"; };
 		03CD330E220F5F05006B7BCA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-surechigaiAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-surechigaiAppTests/Pods-surechigaiAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		321585E722184C7E00E96890 /* SelectWaiting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectWaiting.storyboard; sourceTree = "<group>"; };
+		321585E922184C9200E96890 /* SelectWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectWaitingViewController.swift; sourceTree = "<group>"; };
 		32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCreateViewController.swift; sourceTree = "<group>"; };
 		32181EDE2216D50F00655BA9 /* RegisterProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterProfile.storyboard; sourceTree = "<group>"; };
 		32181EEA2217117500655BA9 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 				32181EF92217AA5A00655BA9 /* NoticeListViewController.swift */,
 				03CD330E220F5F05006B7BCA /* HomeViewController.swift */,
 				50ECAC7A221836CB000F6BA1 /* ExchangeProfileViewController.swift */,
+				321585E922184C9200E96890 /* SelectWaitingViewController.swift */,
 				50016FC82210802800F6C6D9 /* ProfileRegistrationViewController.swift */,
 				50ECAC7C221836CB000F6BA1 /* NotificationViewController.swift */,
 				32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */,
@@ -343,6 +348,7 @@
 				32181EF72217AA0400655BA9 /* NoticeList.storyboard */,
 				03CD32FA220F4EB9006B7BCA /* Home.storyboard */,
 				50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */,
+				321585E722184C7E00E96890 /* SelectWaiting.storyboard */,
 				50016FCA2210848400F6C6D9 /* ProfileRegistration.storyboard */,
 				50ECAC902218376E000F6BA1 /* Notification.storyboard */,
 				50ECAC8F2218376E000F6BA1 /* NotificationCreate.storyboard */,
@@ -491,6 +497,7 @@
 				32181EF52217A85C00655BA9 /* SignUp.storyboard in Resources */,
 				32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */,
 				03CD32FF220F53D5006B7BCA /* Setting.storyboard in Resources */,
+				321585E822184C7E00E96890 /* SelectWaiting.storyboard in Resources */,
 				50016FCB2210848400F6C6D9 /* ProfileRegistration.storyboard in Resources */,
 				03CD330A220F5A65006B7BCA /* Ad_1x.png in Resources */,
 				32EB83D122105F800034C094 /* Login.storyboard in Resources */,
@@ -690,6 +697,7 @@
 				32181EEE2217122900655BA9 /* CarouselCell.swift in Sources */,
 				50ECAC8A2218371C000F6BA1 /* RegistrationView.swift in Sources */,
 				50ECAC80221836CB000F6BA1 /* RegisterProfileViewController.swift in Sources */,
+				321585EA22184C9200E96890 /* SelectWaitingViewController.swift in Sources */,
 				32181EF32217A84500655BA9 /* SignUpViewController.swift in Sources */,
 				50ECAC81221836CB000F6BA1 /* NotificationViewController.swift in Sources */,
 				50ECAC7F221836CB000F6BA1 /* ExchangeProfileViewController.swift in Sources */,
