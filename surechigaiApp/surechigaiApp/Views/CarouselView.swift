@@ -14,7 +14,7 @@ class CarouselView: UICollectionView {
     var cellItemsWidth: CGFloat = 0.0
     
     // スクロールの無限化判定
-    let isInfinity = true
+    let isInfinity = false
     
     // セルの配色
     let colors:[UIColor] = [.blue,.yellow,.red,.green,.gray]
@@ -35,9 +35,11 @@ class CarouselView: UICollectionView {
     
     convenience init(frame: CGRect) {
         let layout = PagingPerCellFlowLayout()
-        layout.itemSize = CGSize(width: 270, height: frame.height / 2)
+        layout.itemSize = CGSize(width: 300, height: frame.height / 2)
         // スクロールの向きを水平に変更
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = -20
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         self.init(frame: frame, collectionViewLayout: layout)
         

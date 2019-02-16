@@ -10,8 +10,6 @@ import UIKit
 
 class CarouselCell: UICollectionViewCell {
     
-    
-    
     @IBOutlet weak var registerView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -27,18 +25,6 @@ class CarouselCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setup()
-    }
-    
-    func setup() {
-        // ここでセットアップする
-        // セルを角丸にする
-        registerView.layer.cornerRadius = 10
-        registerView.layer.shadowOffset = CGSize(width: 1,height: 1) // 影の位置
-        registerView.layer.shadowColor = UIColor.gray.cgColor        // 影の色
-        registerView.layer.shadowOpacity = 0.7                       // 影の透明度
-        registerView.layer.shadowRadius = 5                          // 影の広がり
     }
 
     @IBAction func pushProfileBtn(_ sender: Any) {

@@ -282,8 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				50ECAC6C22183695000F6BA1 /* UIColorExtension.swift */,
-				50ECAC6D22183695000F6BA1 /* CustomTextField.swift */,
 				50ECAC93221854BC000F6BA1 /* UIViewExtension.swift */,
+				50ECAC6D22183695000F6BA1 /* CustomTextField.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";

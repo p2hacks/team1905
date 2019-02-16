@@ -21,6 +21,8 @@ class RegisterProfileViewController: UIViewController {
         carouselView = CarouselView(frame: CGRect(x:0, y:0, width:width, height:height+200))
         carouselView.center = CGPoint(x:width / 2,y: height / 2)
         carouselView.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: "registerCell")
+        carouselView.layoutMargins.left = 5
+        carouselView.layoutMargins.right = 5
         self.view.addSubview(carouselView)
     }
 
