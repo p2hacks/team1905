@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
 
     var noticeListCell = NoticeListViewController()
+    
+    var noticeBadgeNumber = 0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -60,6 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             UIApplication.shared.registerUserNotificationSettings(settings)
         }
         
+        application.applicationIconBadgeNumber = self.noticeBadgeNumber
+        
         //Realmのマイグレーション処理
         let config = Realm.Configuration(
             schemaVersion : 5 , //データの構造が変わったらここを変える
@@ -93,11 +97,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             // アプリ起動時にPush通知を受信したとき
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.noticeListCell.addCell()
+            self.noticeBadgeNumber += 1
             break
         case .background:
             // アプリがバックグラウンドにいる状態でPush通知を受信したとき
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.noticeListCell.addCell()
+            self.noticeBadgeNumber += 1
             break
         }
     }
