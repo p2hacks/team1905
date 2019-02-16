@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="641" y="-333"/>
         </scene>
-        <!--Notification-->
+        <!--RegisterProfile-->
         <scene sceneID="ENS-hQ-8eM">
             <objects>
-                <viewControllerPlaceholder storyboardName="Notification" id="mOL-bZ-YkI" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="RegisterProfile" id="mOL-bZ-YkI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Notification" image="Ad_1x.png" landscapeImage="Ad_1x.png" largeContentSizeImage="Ad_1x.png" selectedImage="Ad_1x.png" id="1Sa-TO-Lxx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9S-hG-8do" userLabel="First Responder" sceneMemberID="firstResponder"/>
