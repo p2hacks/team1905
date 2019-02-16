@@ -55,6 +55,7 @@
 		50ECAC8B2218371C000F6BA1 /* RegistrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50ECAC872218371C000F6BA1 /* RegistrationView.xib */; };
 		50ECAC912218376E000F6BA1 /* NotificationCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ECAC8F2218376E000F6BA1 /* NotificationCreate.storyboard */; };
 		50ECAC922218376E000F6BA1 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ECAC902218376E000F6BA1 /* Notification.storyboard */; };
+		50ECAC94221854BC000F6BA1 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECAC93221854BC000F6BA1 /* UIViewExtension.swift */; };
 		7ED2DC1C4D915D61F6EE37BB /* Pods_surechigaiAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1E608E7F1FE5603E3F90E4 /* Pods_surechigaiAppTests.framework */; };
 		9886D1A7A35CABD79DF9D5B6 /* Pods_surechigaiAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6CA5AABD505DCE238CB80C /* Pods_surechigaiAppUITests.framework */; };
 		D0DA508DFAFF3FC5982273C3 /* Pods_surechigaiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E151620FD2047B8BCA409C3B /* Pods_surechigaiApp.framework */; };
@@ -133,6 +134,7 @@
 		50ECAC872218371C000F6BA1 /* RegistrationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationView.xib; sourceTree = "<group>"; };
 		50ECAC8F2218376E000F6BA1 /* NotificationCreate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NotificationCreate.storyboard; sourceTree = "<group>"; };
 		50ECAC902218376E000F6BA1 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		50ECAC93221854BC000F6BA1 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5FF24996FA45D46137A9335C /* Pods-surechigaiAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-surechigaiAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-surechigaiAppUITests/Pods-surechigaiAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A1E608E7F1FE5603E3F90E4 /* Pods_surechigaiAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_surechigaiAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D133AD315419E2303283FF /* Pods-surechigaiAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-surechigaiAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-surechigaiAppUITests/Pods-surechigaiAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				50ECAC6C22183695000F6BA1 /* UIColorExtension.swift */,
 				50ECAC6D22183695000F6BA1 /* CustomTextField.swift */,
+				50ECAC93221854BC000F6BA1 /* UIViewExtension.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				50ECAC76221836AA000F6BA1 /* Notification.swift in Sources */,
 				50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */,
 				03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */,
+				50ECAC94221854BC000F6BA1 /* UIViewExtension.swift in Sources */,
 				50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */,
 				32181EFA2217AA5A00655BA9 /* NoticeListViewController.swift in Sources */,
 				32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */,
