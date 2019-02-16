@@ -29,7 +29,7 @@ class InputLogic: NSObject {
     var coursePickerView: UIPickerView = UIPickerView()
     var firstClassPickerView: UIPickerView = UIPickerView()
     var gradePickerView: UIPickerView = UIPickerView()
-    let datePicker = UIDatePicker()
+    //let datePicker = UIDatePicker()
     
     var toolbar = UIToolbar()
     
@@ -46,11 +46,11 @@ class InputLogic: NSObject {
     var defaultDegree_row: Int = 0
     var defaultGrade_row: Int = 0
     
-    // Datepickerの最小値
+    /*// Datepickerの最小値
     let minDateString: String = "1940/01/01"
     // Datepickerの初期値
     var defaultDateString: String = "1990/01/01"
-    var defaultDate = Date()
+    var defaultDate = Date()*/
     
     var pickerFlg: pickerType!
     var isFirstResistration: Bool = true
@@ -72,7 +72,6 @@ class InputLogic: NSObject {
         
         setToolBar()
         setDefaultPickerValue()
-        initDatePicker()
     }
     
     func setMethods(cancelMethod: (() -> Void)? = nil, doneMethod: (() -> Void)? = nil, datePickerChangeMethod: (() -> Void)? = nil, endEditMethod: (() -> Void)? = nil) {
@@ -95,27 +94,6 @@ class InputLogic: NSObject {
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(ProfileRegistrationViewController().done))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(ProfileRegistrationViewController().cancel))
         toolbar.setItems([cancelItem, doneItem], animated: true)
-    }
-    
-    func initDatePicker() {
-        datePicker.addTarget(self, action: #selector(ProfileRegistrationViewController().datePickerValueChanged), for: UIControl.Event.valueChanged)
-        
-        datePicker.datePickerMode = .date
-        datePicker.locale = Locale(identifier: "ja")
-        
-        let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
-        
-        
-        let minDate = dateFormatter.date(from: minDateString)
-        
-        datePicker.minimumDate = minDate
-        datePicker.maximumDate = Date()
-        
-        defaultDate = dateFormatter.date(from: defaultDateString)!
-        
-        datePicker.date = defaultDate
-        
     }
     
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
