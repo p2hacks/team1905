@@ -35,6 +35,8 @@
 		50016FD922155AC500F6C6D9 /* ExchangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */; };
 		50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */; };
 		5006A5ED2218BB0E00BB586D /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006A5EC2218BB0E00BB586D /* PickerTextField.swift */; };
+		5006A5EF22191EC100BB586D /* StudentInfoRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006A5EE22191EC100BB586D /* StudentInfoRegistrationViewController.swift */; };
+		5006A5F122192BDE00BB586D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006A5F022192BDE00BB586D /* ProfileTableViewCell.swift */; };
 		507FE68D2216D3C700872283 /* BLEConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FE68C2216D3C700872283 /* BLEConnectivity.swift */; };
 		50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81B220F1D4E00D09939 /* AppDelegate.swift */; };
 		50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C8D81F220F1D4E00D09939 /* Main.storyboard */; };
@@ -111,6 +113,8 @@
 		50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeProfile.storyboard; sourceTree = "<group>"; };
 		50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P2PConnectivity.swift; sourceTree = "<group>"; };
 		5006A5EC2218BB0E00BB586D /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
+		5006A5EE22191EC100BB586D /* StudentInfoRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoRegistrationViewController.swift; sourceTree = "<group>"; };
+		5006A5F022192BDE00BB586D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		507FE68C2216D3C700872283 /* BLEConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConnectivity.swift; sourceTree = "<group>"; };
 		50C8D818220F1D4E00D09939 /* surechigaiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surechigaiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C8D81B220F1D4E00D09939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 				50ECAC7A221836CB000F6BA1 /* ExchangeProfileViewController.swift */,
 				321585E922184C9200E96890 /* SelectWaitingViewController.swift */,
 				50016FC82210802800F6C6D9 /* ProfileRegistrationViewController.swift */,
+				5006A5EE22191EC100BB586D /* StudentInfoRegistrationViewController.swift */,
 				50ECAC7C221836CB000F6BA1 /* NotificationViewController.swift */,
 				32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */,
 				50ECAC7B221836CB000F6BA1 /* RegisterProfileViewController.swift */,
@@ -347,6 +352,7 @@
 				32181EF022171B4400655BA9 /* PagingPerCellFlowLayout.swift */,
 				50ECAC842218371C000F6BA1 /* RegistrationTableViewCell.swift */,
 				50ECAC852218371C000F6BA1 /* RegistrationTableViewCell.xib */,
+				5006A5F022192BDE00BB586D /* ProfileTableViewCell.swift */,
 			);
 			path = "Custom cells";
 			sourceTree = "<group>";
@@ -704,6 +710,7 @@
 				50ECAC882218371C000F6BA1 /* RegistrationTableViewCell.swift in Sources */,
 				507FE68D2216D3C700872283 /* BLEConnectivity.swift in Sources */,
 				50ECAC74221836AA000F6BA1 /* Profile.swift in Sources */,
+				5006A5F122192BDE00BB586D /* ProfileTableViewCell.swift in Sources */,
 				32181EF122171B4400655BA9 /* PagingPerCellFlowLayout.swift in Sources */,
 				50ECAC7D221836CB000F6BA1 /* ViewController.swift in Sources */,
 				32181EEE2217122900655BA9 /* CarouselCell.swift in Sources */,
@@ -726,6 +733,7 @@
 				321585ED2218924500E96890 /* CarouselDetailsTableViewCell.swift in Sources */,
 				03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */,
 				50ECAC94221854BC000F6BA1 /* UIViewExtension.swift in Sources */,
+				5006A5EF22191EC100BB586D /* StudentInfoRegistrationViewController.swift in Sources */,
 				50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */,
 				32181EFA2217AA5A00655BA9 /* NoticeListViewController.swift in Sources */,
 				32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */,

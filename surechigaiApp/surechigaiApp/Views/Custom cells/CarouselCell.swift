@@ -21,30 +21,36 @@ class CarouselCell: UICollectionViewCell {
     
     var switchingNumber = 0
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        //initCourceTableView()
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        //initCourceTableView()
+        let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
+        view.frame = frame
+        addSubview(view)
+        
+        initCarouselTableView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        registerTableView.delegate = self
-        registerTableView.dataSource = self
-        initCourceTableView()
+        // XIB読み込み
+        let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
+        addSubview(view)
+        
+        initCarouselTableView()
     }
     
     //MARK: - TableView init
-    func initCourceTableView() {
+    func initCarouselTableView() {
         
-        let nib = UINib(nibName: "CarouselDetailsTableViewCell", bundle: nil)
-        registerTableView.register(nib, forCellReuseIdentifier: "carouselDetailCell_ID")
+        //let nib = UINib(nibName: "CarouselDetailsTableViewCell", bundle: nil)
+        self.registerTableView.register(UINib(nibName: "CarouselDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "carouselDetailCell_ID")
+        //registerTableView.register(nib, forCellReuseIdentifier: "carouselDetailCell_ID")
     }
     
     
@@ -66,18 +72,18 @@ class CarouselCell: UICollectionViewCell {
 
 extension CarouselCell: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = registerTableView.dequeueReusableCell(withIdentifier: "carouselDetailsTableViewCell", for: indexPath) 
+        let cell = self.registerTableView.dequeueReusableCell(withIdentifier: "carouselDetailCell_ID", for: indexPath) as! CarouselDetailsTableViewCell
+        cell.setCell()
         if self.switchingNumber == 0 {
-            cell.detailTextLabel?.text = "プロフィール"
+            cell.adDetailsLabel.text = "プロフィール"
         } else if self.switchingNumber == 1 {
-            cell.detailTextLabel?.text = "広告"
+            cell.adDetailsLabel.text = "広告"
         } else {
-            cell.detailTextLabel?.text = "履歴"
+            cell.adDetailsLabel?.text = "履歴"
         }
         return cell
     }

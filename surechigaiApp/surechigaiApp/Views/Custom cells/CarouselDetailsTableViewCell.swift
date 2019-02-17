@@ -10,7 +10,11 @@ import UIKit
 
 class CarouselDetailsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var adDetailsLabel: UILabel!
+    
+    func setCell() {
+        adDetailsLabel.text = "詳細"
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +30,7 @@ class CarouselDetailsTableViewCell: UITableViewCell {
         let view = Bundle.main.loadNibNamed("CarouselDetailsTableViewCell", owner: self, options: nil)?.first as! UIView
         view.frame = frame
         addSubview(view)
+        
         // Configure the view for the selected state
     }
     

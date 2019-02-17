@@ -22,42 +22,18 @@ class ProfileRegistrationViewController: UIViewController {
     
     let SET_TEXT_ERROR: String = "error: Realmのデータが空ですが、setTextが呼ばれています"
     
-    @IBOutlet weak var nameTF: UITextField!
-    @IBOutlet weak var studentNumberTF: UITextField!
-    @IBOutlet weak var birthDayTF: DatePickerTextField!
-    @IBOutlet weak var birthPlaceTF: UITextField!
-    @IBOutlet weak var courseTF: PickerTextField!
-    @IBOutlet weak var firstClassTF: PickerTextField!
-    @IBOutlet weak var handleTF: UITextField!
-    @IBOutlet weak var clubTF: UITextField!
-    @IBOutlet weak var gradeTF: PickerTextField!
-    
     let realm = try! Realm()
     var profile: Profile = Profile()
     
-    let courseList: [String] = ["", "情報システム", "デザイン", "知能システム", "複雑系", "高度ICT"]
-    let firstClassList: [String] = ["", "前半", "中間", "後半"]
-    let degreeList: [String] = ["", "学部", "院"]
-    let gradeList: [String] = ["", "１", "2", "3", "4"]
-    
-    var defaultCourse_row: Int = 0
-    var defaultFirstClass_row: Int = 0
-    var defaultDegree_row: Int = 0
-    var defaultGrade_row: Int = 0
-    
     var isFirstResistration: Bool = true
     
+    @IBOutlet weak var inputTable: UITableView!
     
     @IBAction func onTapRegistrationBtn(_ sender: Any) {
-        profile.name = nameTF.text!
-        profile.student_number = studentNumberTF.text!
+        profile.name = inputTable.cellForRow(at: IndexPath(0)).nameTF.text!
         profile.birthDay = birthDayTF.text!
         profile.birthplace = birthPlaceTF.text!
-        profile.course = courseTF.text!
-        profile.part_of_class = firstClassTF.text!
         profile.handle = handleTF.text!
-        profile.club = clubTF.text!
-        profile.grade = gradeTF.text!
         
         if isFirstResistration {
             createProfile(data: profile)
@@ -80,13 +56,7 @@ class ProfileRegistrationViewController: UIViewController {
             isFirstResistration = true
         } else {
             isFirstResistration = false
-            setTextFields()
             
-            birthDayTF.setup()
-           
-            courseTF.setup(dataList2: courseList)
-            firstClassTF.setup(dataList2: firstClassList)
-            gradeTF.setup(dataList1: degreeList, dataList2: gradeList)
         }
         
     }
@@ -108,13 +78,8 @@ class ProfileRegistrationViewController: UIViewController {
         
         try! realm.write {
             results[0].name = data.name
-            results[0].student_number = data.student_number
             results[0].birthDay = data.birthDay
             results[0].birthplace = data.birthplace
-            results[0].course = data.course
-            results[0].part_of_class = data.part_of_class
-            results[0].club = data.club
-            results[0].grade = data.grade
             results[0].handle = data.handle
         }
     }
@@ -125,34 +90,9 @@ class ProfileRegistrationViewController: UIViewController {
         
         guard results.isEmpty else {
             nameTF.text = results[0].name
-            studentNumberTF.text = results[0].student_number
             birthDayTF.text = results[0].birthDay
             birthPlaceTF.text = results[0].birthplace
-            courseTF.text = results[0].course
-            firstClassTF.text = results[0].part_of_class
             handleTF.text = results[0].handle
-            clubTF.text = results[0].club
-            gradeTF.text = results[0].grade
-            
-            var degree: String = ""
-            var grade: String = ""
-            
-            if results[0].grade != ""{
-                degree = String(results[0].grade.prefix(results[0].grade.count - 2))
-                grade = String(results[0].grade.suffix(2).prefix(1))
-            }
-            
-            
-            
-            let defaultCourse_row = courseList.index(of: results[0].course)!
-            let defaultFirstClass_row = firstClassList.index(of: results[0].part_of_class)!
-            let defaultDegree_row = degreeList.index(of: degree)!
-            let defaultGrade_row = gradeList.index(of: grade)!
-            
-            courseTF.setTextFields(default_row: defaultCourse_row)
-            firstClassTF.setTextFields(default_row: defaultFirstClass_row)
-            gradeTF.setTextFields(default_row: defaultDegree_row, degree_row: defaultGrade_row)
-            gradeTF.setTextFields(default_row: defaultDegree_row)
             
             return
         }
@@ -165,4 +105,41 @@ class ProfileRegistrationViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+}
+
+extension ProfileRegistrationViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0: // 氏名 "student_number"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "name", for: indexPath) as! ProfileTableViewCell
+        profile.name = cell.nameTF.text!
+        return cell
+        case 1: // ハンドルネーム "grade"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "handle", for: indexPath) as! ProfileTableViewCell
+        return cell
+        case 2: // 誕生日 "course"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "birthDay", for: indexPath) as! ProfileTableViewCell
+        return cell
+        case 3: // 出身地　"sfirst_class"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "birthPlace", for: indexPath) as! ProfileTableViewCell
+        return cell
+        default:
+        let cell = tableView.dequeueReusableCell(withIdentifier: "name", for: indexPath) as! UITableViewCell
+        return cell
+    }
+    }
+    
+    
+}
+
+extension ProfileRegistrationViewController: InputTextTableCellDelegate {
+    
+    func textFieldDidEndEditing(cell: ProfileTableViewCell, value: NSString) -> () {
+        let path = inputTable.indexPathForRowAtPoint(cell.convertPoint(cell.bounds.origin, toView: tableView))
+        NSLog("row = %d, value = %@", path!.row, value)
+    }
 }

@@ -10,9 +10,11 @@ import UIKit
 
 class RegistrationTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var inputTF: UITextField!
-    
+    @IBOutlet weak var studentNumberTF: UITextField!
+    @IBOutlet weak var gradeTF: PickerTextField!
+    @IBOutlet weak var courseTF: PickerTextField!
+    @IBOutlet weak var firstClassTF: PickerTextField!
+    @IBOutlet weak var clubTF: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
