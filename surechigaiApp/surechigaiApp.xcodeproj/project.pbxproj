@@ -37,6 +37,10 @@
 		32898C8722190C3800BDA21C /* bm.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C8622190C3800BDA21C /* bm.png */; };
 		32898C8922190C4200BDA21C /* at.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C8822190C4200BDA21C /* at.png */; };
 		32898C8B22190C4C00BDA21C /* history2.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C8A22190C4B00BDA21C /* history2.png */; };
+		32898C8F22190F6100BDA21C /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C8E22190F6100BDA21C /* person.png */; };
+		32898C9222190F9D00BDA21C /* garbage.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C9122190F9D00BDA21C /* garbage.png */; };
+		32898C95221910D200BDA21C /* place.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C94221910D200BDA21C /* place.png */; };
+		32898C982219112900BDA21C /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C972219112900BDA21C /* shop.png */; };
 		32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83CC2210590B0034C094 /* GoogleService-Info.plist */; };
 		32EB83CF22105F6C0034C094 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB83CE22105F6B0034C094 /* LoginViewController.swift */; };
 		32EB83D122105F800034C094 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83D022105F800034C094 /* Login.storyboard */; };
@@ -123,6 +127,10 @@
 		32898C8622190C3800BDA21C /* bm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bm.png; sourceTree = "<group>"; };
 		32898C8822190C4200BDA21C /* at.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = at.png; sourceTree = "<group>"; };
 		32898C8A22190C4B00BDA21C /* history2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history2.png; sourceTree = "<group>"; };
+		32898C8E22190F6100BDA21C /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
+		32898C9122190F9D00BDA21C /* garbage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garbage.png; sourceTree = "<group>"; };
+		32898C94221910D200BDA21C /* place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = place.png; sourceTree = "<group>"; };
+		32898C972219112900BDA21C /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
 		32EB83CC2210590B0034C094 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32EB83CE22105F6B0034C094 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32EB83D022105F800034C094 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -236,6 +244,9 @@
 		32898C652219082300BDA21C /* NotificationImage */ = {
 			isa = PBXGroup;
 			children = (
+				32898C962219110D00BDA21C /* event_bringThing */,
+				32898C9322190FD900BDA21C /* place */,
+				32898C9022190F7800BDA21C /* garbage */,
 				32898C662219086200BDA21C /* type */,
 				32898C6F221908A000BDA21C /* name */,
 				32898C722219092400BDA21C /* representative_name */,
@@ -268,6 +279,7 @@
 		32898C722219092400BDA21C /* representative_name */ = {
 			isa = PBXGroup;
 			children = (
+				32898C8E22190F6100BDA21C /* person.png */,
 			);
 			path = representative_name;
 			sourceTree = "<group>";
@@ -294,6 +306,30 @@
 				32898C8A22190C4B00BDA21C /* history2.png */,
 			);
 			path = started_at_to_i;
+			sourceTree = "<group>";
+		};
+		32898C9022190F7800BDA21C /* garbage */ = {
+			isa = PBXGroup;
+			children = (
+				32898C9122190F9D00BDA21C /* garbage.png */,
+			);
+			path = garbage;
+			sourceTree = "<group>";
+		};
+		32898C9322190FD900BDA21C /* place */ = {
+			isa = PBXGroup;
+			children = (
+				32898C94221910D200BDA21C /* place.png */,
+			);
+			path = place;
+			sourceTree = "<group>";
+		};
+		32898C962219110D00BDA21C /* event_bringThing */ = {
+			isa = PBXGroup;
+			children = (
+				32898C972219112900BDA21C /* shop.png */,
+			);
+			path = event_bringThing;
 			sourceTree = "<group>";
 		};
 		49894DFB1A86D8B4817CCFF7 /* Pods */ = {
@@ -580,12 +616,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32898C9222190F9D00BDA21C /* garbage.png in Resources */,
 				321585EE2218924500E96890 /* CarouselDetailsTableViewCell.xib in Resources */,
 				32898C8522190C2E00BDA21C /* fun.png in Resources */,
 				32898C8B22190C4C00BDA21C /* history2.png in Resources */,
 				50C8D826220F1D5100D09939 /* LaunchScreen.storyboard in Resources */,
+				32898C95221910D200BDA21C /* place.png in Resources */,
 				03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */,
 				50C8D823220F1D5100D09939 /* Assets.xcassets in Resources */,
+				32898C8F22190F6100BDA21C /* person.png in Resources */,
 				32898C8322190C1E00BDA21C /* event.png in Resources */,
 				32898C8722190C3800BDA21C /* bm.png in Resources */,
 				50ECAC892218371C000F6BA1 /* RegistrationTableViewCell.xib in Resources */,
@@ -598,6 +637,7 @@
 				32181EEF2217122900655BA9 /* CarouselCell.xib in Resources */,
 				50ECAC8B2218371C000F6BA1 /* RegistrationView.xib in Resources */,
 				32898C8122190C1E00BDA21C /* circle.png in Resources */,
+				32898C982219112900BDA21C /* shop.png in Resources */,
 				03CD32FB220F4EB9006B7BCA /* Home.storyboard in Resources */,
 				32181EF52217A85C00655BA9 /* SignUp.storyboard in Resources */,
 				32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */,
