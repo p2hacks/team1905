@@ -27,6 +27,16 @@
 		32181EF52217A85C00655BA9 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181EF42217A85C00655BA9 /* SignUp.storyboard */; };
 		32181EF82217AA0400655BA9 /* NoticeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181EF72217AA0400655BA9 /* NoticeList.storyboard */; };
 		32181EFA2217AA5A00655BA9 /* NoticeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EF92217AA5A00655BA9 /* NoticeListViewController.swift */; };
+		32898C632219020900BDA21C /* NotigicationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32898C612219020900BDA21C /* NotigicationCollectionViewCell.swift */; };
+		32898C642219020900BDA21C /* NotigicationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32898C622219020900BDA21C /* NotigicationCollectionViewCell.xib */; };
+		32898C8022190C1E00BDA21C /* work.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C7C22190C1E00BDA21C /* work.png */; };
+		32898C8122190C1E00BDA21C /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C7D22190C1E00BDA21C /* circle.png */; };
+		32898C8222190C1E00BDA21C /* study.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C7E22190C1E00BDA21C /* study.png */; };
+		32898C8322190C1E00BDA21C /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C7F22190C1E00BDA21C /* event.png */; };
+		32898C8522190C2E00BDA21C /* fun.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C8422190C2E00BDA21C /* fun.png */; };
+		32898C8722190C3800BDA21C /* bm.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C8622190C3800BDA21C /* bm.png */; };
+		32898C8922190C4200BDA21C /* at.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C8822190C4200BDA21C /* at.png */; };
+		32898C8B22190C4C00BDA21C /* history2.png in Resources */ = {isa = PBXBuildFile; fileRef = 32898C8A22190C4B00BDA21C /* history2.png */; };
 		32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83CC2210590B0034C094 /* GoogleService-Info.plist */; };
 		32EB83CF22105F6C0034C094 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB83CE22105F6B0034C094 /* LoginViewController.swift */; };
 		32EB83D122105F800034C094 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32EB83D022105F800034C094 /* Login.storyboard */; };
@@ -103,6 +113,16 @@
 		32181EF42217A85C00655BA9 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		32181EF72217AA0400655BA9 /* NoticeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoticeList.storyboard; sourceTree = "<group>"; };
 		32181EF92217AA5A00655BA9 /* NoticeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListViewController.swift; sourceTree = "<group>"; };
+		32898C612219020900BDA21C /* NotigicationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotigicationCollectionViewCell.swift; sourceTree = "<group>"; };
+		32898C622219020900BDA21C /* NotigicationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotigicationCollectionViewCell.xib; sourceTree = "<group>"; };
+		32898C7C22190C1E00BDA21C /* work.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = work.png; sourceTree = "<group>"; };
+		32898C7D22190C1E00BDA21C /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		32898C7E22190C1E00BDA21C /* study.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = study.png; sourceTree = "<group>"; };
+		32898C7F22190C1E00BDA21C /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event.png; sourceTree = "<group>"; };
+		32898C8422190C2E00BDA21C /* fun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fun.png; sourceTree = "<group>"; };
+		32898C8622190C3800BDA21C /* bm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bm.png; sourceTree = "<group>"; };
+		32898C8822190C4200BDA21C /* at.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = at.png; sourceTree = "<group>"; };
+		32898C8A22190C4B00BDA21C /* history2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history2.png; sourceTree = "<group>"; };
 		32EB83CC2210590B0034C094 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32EB83CE22105F6B0034C094 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32EB83D022105F800034C094 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -213,6 +233,69 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		32898C652219082300BDA21C /* NotificationImage */ = {
+			isa = PBXGroup;
+			children = (
+				32898C662219086200BDA21C /* type */,
+				32898C6F221908A000BDA21C /* name */,
+				32898C722219092400BDA21C /* representative_name */,
+				32898C73221909A200BDA21C /* representative_student_number */,
+				32898C7622190A0100BDA21C /* representative_contact */,
+				32898C7922190A8C00BDA21C /* started_at_to_i */,
+			);
+			path = NotificationImage;
+			sourceTree = "<group>";
+		};
+		32898C662219086200BDA21C /* type */ = {
+			isa = PBXGroup;
+			children = (
+				32898C7D22190C1E00BDA21C /* circle.png */,
+				32898C7F22190C1E00BDA21C /* event.png */,
+				32898C7E22190C1E00BDA21C /* study.png */,
+				32898C7C22190C1E00BDA21C /* work.png */,
+			);
+			path = type;
+			sourceTree = "<group>";
+		};
+		32898C6F221908A000BDA21C /* name */ = {
+			isa = PBXGroup;
+			children = (
+				32898C8422190C2E00BDA21C /* fun.png */,
+			);
+			path = name;
+			sourceTree = "<group>";
+		};
+		32898C722219092400BDA21C /* representative_name */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = representative_name;
+			sourceTree = "<group>";
+		};
+		32898C73221909A200BDA21C /* representative_student_number */ = {
+			isa = PBXGroup;
+			children = (
+				32898C8622190C3800BDA21C /* bm.png */,
+			);
+			path = representative_student_number;
+			sourceTree = "<group>";
+		};
+		32898C7622190A0100BDA21C /* representative_contact */ = {
+			isa = PBXGroup;
+			children = (
+				32898C8822190C4200BDA21C /* at.png */,
+			);
+			path = representative_contact;
+			sourceTree = "<group>";
+		};
+		32898C7922190A8C00BDA21C /* started_at_to_i */ = {
+			isa = PBXGroup;
+			children = (
+				32898C8A22190C4B00BDA21C /* history2.png */,
+			);
+			path = started_at_to_i;
+			sourceTree = "<group>";
+		};
 		49894DFB1A86D8B4817CCFF7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +341,7 @@
 				50ECAC8E2218376E000F6BA1 /* StoryBoards */,
 				50C8D81B220F1D4E00D09939 /* AppDelegate.swift */,
 				50C8D822220F1D5100D09939 /* Assets.xcassets */,
+				32898C652219082300BDA21C /* NotificationImage */,
 				03CD3300220F585E006B7BCA /* TabIcon */,
 				50C8D824220F1D5100D09939 /* LaunchScreen.storyboard */,
 				50C8D827220F1D5100D09939 /* Info.plist */,
@@ -347,6 +431,8 @@
 				32181EF022171B4400655BA9 /* PagingPerCellFlowLayout.swift */,
 				50ECAC842218371C000F6BA1 /* RegistrationTableViewCell.swift */,
 				50ECAC852218371C000F6BA1 /* RegistrationTableViewCell.xib */,
+				32898C612219020900BDA21C /* NotigicationCollectionViewCell.swift */,
+				32898C622219020900BDA21C /* NotigicationCollectionViewCell.xib */,
 			);
 			path = "Custom cells";
 			sourceTree = "<group>";
@@ -495,17 +581,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				321585EE2218924500E96890 /* CarouselDetailsTableViewCell.xib in Resources */,
+				32898C8522190C2E00BDA21C /* fun.png in Resources */,
+				32898C8B22190C4C00BDA21C /* history2.png in Resources */,
 				50C8D826220F1D5100D09939 /* LaunchScreen.storyboard in Resources */,
 				03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */,
 				50C8D823220F1D5100D09939 /* Assets.xcassets in Resources */,
+				32898C8322190C1E00BDA21C /* event.png in Resources */,
+				32898C8722190C3800BDA21C /* bm.png in Resources */,
 				50ECAC892218371C000F6BA1 /* RegistrationTableViewCell.xib in Resources */,
 				32181EDF2216D50F00655BA9 /* RegisterProfile.storyboard in Resources */,
 				03CD3307220F585E006B7BCA /* home_1x.png in Resources */,
 				50ECAC912218376E000F6BA1 /* NotificationCreate.storyboard in Resources */,
 				50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */,
+				32898C8922190C4200BDA21C /* at.png in Resources */,
 				32181EF82217AA0400655BA9 /* NoticeList.storyboard in Resources */,
 				32181EEF2217122900655BA9 /* CarouselCell.xib in Resources */,
 				50ECAC8B2218371C000F6BA1 /* RegistrationView.xib in Resources */,
+				32898C8122190C1E00BDA21C /* circle.png in Resources */,
 				03CD32FB220F4EB9006B7BCA /* Home.storyboard in Resources */,
 				32181EF52217A85C00655BA9 /* SignUp.storyboard in Resources */,
 				32EB83CD2210590B0034C094 /* GoogleService-Info.plist in Resources */,
@@ -513,8 +605,11 @@
 				321585E822184C7E00E96890 /* SelectWaiting.storyboard in Resources */,
 				50016FCB2210848400F6C6D9 /* ProfileRegistration.storyboard in Resources */,
 				03CD330A220F5A65006B7BCA /* Ad_1x.png in Resources */,
+				32898C642219020900BDA21C /* NotigicationCollectionViewCell.xib in Resources */,
 				32EB83D122105F800034C094 /* Login.storyboard in Resources */,
 				50016FD922155AC500F6C6D9 /* ExchangeProfile.storyboard in Resources */,
+				32898C8222190C1E00BDA21C /* study.png in Resources */,
+				32898C8022190C1E00BDA21C /* work.png in Resources */,
 				50ECAC922218376E000F6BA1 /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +797,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50ECAC882218371C000F6BA1 /* RegistrationTableViewCell.swift in Sources */,
+				32898C632219020900BDA21C /* NotigicationCollectionViewCell.swift in Sources */,
 				507FE68D2216D3C700872283 /* BLEConnectivity.swift in Sources */,
 				50ECAC74221836AA000F6BA1 /* Profile.swift in Sources */,
 				32181EF122171B4400655BA9 /* PagingPerCellFlowLayout.swift in Sources */,
