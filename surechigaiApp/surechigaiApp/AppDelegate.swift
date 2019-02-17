@@ -7,16 +7,105 @@
 //
 
 import UIKit
+import Firebase
+import UserNotifications
+import RealmSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
+    var noticeListCell = NoticeListViewController()
+    
+    var noticeBadgeNumber = 0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        
+        //自動ログイン
+        if Auth.auth().currentUser != nil { //もしもユーザがログインしていたら
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateInitialViewController()
+            
+            self.window?.rootViewController = initialViewController
+            
+            self.window?.makeKeyAndVisible()
+        }
+        
+        // 通知許可申請
+        if #available(iOS 10.0, *) {
+            // iOS 10
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in
+                if error != nil {
+                    return
+                }
+                
+                if granted {
+                    print("通知許可")
+                    
+                    let center = UNUserNotificationCenter.current()
+                    center.delegate = self
+                    
+                } else {
+                    print("通知拒否")
+                }
+            })
+            
+        } else {
+            // iOS 9以下
+            let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(settings)
+        }
+        
+        application.applicationIconBadgeNumber = self.noticeBadgeNumber
+        
+        //Realmのマイグレーション処理
+        let config = Realm.Configuration(
+            schemaVersion : 6 , //データの構造が変わったらここを変える
+            migrationBlock : { migration, oldSchemaVersion in
+                if oldSchemaVersion < 6 {
+                    var nextID = 0
+                    migration.enumerateObjects(ofType: Profile.className()) { oldObject, newObject in
+                        newObject!["id"] = String(nextID)
+                        nextID += 1
+                    }
+                    migration.enumerateObjects(ofType: Notification.className()) { oldObject, newObject in
+                        newObject!["id"] = String(nextID)
+                        nextID += 1
+                    }
+                }
+        }
+        )
+        
+        Realm.Configuration.defaultConfiguration = config
+        
         return true
+    }
+    
+    // Push通知受信時とPush通知をタッチして起動したときに呼ばれる
+    private func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        switch application.applicationState {
+        case .inactive:
+            // アプリがバックグラウンドにいる状態で、Push通知から起動したとき
+            break
+        case .active:
+            // アプリ起動時にPush通知を受信したとき
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.noticeListCell.addCell()
+            self.noticeBadgeNumber += 1
+            break
+        case .background:
+            // アプリがバックグラウンドにいる状態でPush通知を受信したとき
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.noticeListCell.addCell()
+            self.noticeBadgeNumber += 1
+            break
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -25,8 +114,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jAA-Je-d4s">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="JiG-iv-Lkt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="QD7-Qq-3kb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home_1x.png" landscapeImage="home_1x.png" largeContentSizeImage="home_1x.png" selectedImage="home_1x.png" id="kIU-bs-Cul"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRn-9g-CHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="-333"/>
+        </scene>
+        <!--RegisterProfile-->
+        <scene sceneID="ENS-hQ-8eM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RegisterProfile" id="mOL-bZ-YkI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notification" image="Ad_1x.png" landscapeImage="Ad_1x.png" largeContentSizeImage="Ad_1x.png" selectedImage="Ad_1x.png" id="1Sa-TO-Lxx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x9S-hG-8do" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="-46"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="Da2-Eq-Xrc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="0UM-vL-IX1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="Setting_1x.png" landscapeImage="Setting_1x.png" largeContentSizeImage="Setting_1x.png" selectedImage="Setting_1x.png" id="xE0-ln-YWw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Wg-MA-GjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="242"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MR3-xm-6n4">
+            <objects>
+                <tabBarController storyboardIdentifier="Main" id="jAA-Je-d4s" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EYI-Dx-p2Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QD7-Qq-3kb" kind="relationship" relationship="viewControllers" id="JvK-Kq-LFG"/>
+                        <segue destination="mOL-bZ-YkI" kind="relationship" relationship="viewControllers" id="KYW-V4-dFY"/>
+                        <segue destination="0UM-vL-IX1" kind="relationship" relationship="viewControllers" id="Zxe-Cc-S7x"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewp-vu-Lvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258" y="-45"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Ad_1x.png" width="25" height="25"/>
+        <image name="Setting_1x.png" width="25" height="25"/>
+        <image name="home_1x.png" width="25" height="25"/>
+    </resources>
+</document>

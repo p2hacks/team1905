@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mm8-Xx-3pc">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="7dJ-s4-dcp">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="Mm8-Xx-3pc" customClass="LoginViewController" customModule="surechigaiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qQm-tM-XfE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAC-2K-6XA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-m7-NVW">
+                                        <rect key="frame" x="87" y="228" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qsj-Gm-q1g">
+                                        <rect key="frame" x="87" y="122" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWs-2I-aO6">
+                                        <rect key="frame" x="156" y="312" width="62" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="ログイン"/>
+                                        <connections>
+                                            <action selector="pushLoginButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="TM4-fE-8Vq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-YC-qXT" userLabel="Sign Up">
+                                        <rect key="frame" x="106" y="391" width="162" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="アカウント作成"/>
+                                        <connections>
+                                            <action selector="pushTouroku:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="ey4-3N-BMf"/>
+                                            <segue destination="PdG-kc-cUp" kind="show" identifier="toSignUp" id="cvN-G6-Qxn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-ew-8lD">
+                                        <rect key="frame" x="120" y="514" width="134" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="アカウント作成(旧)"/>
+                                        <connections>
+                                            <action selector="pushSignUpButton:" destination="Mm8-Xx-3pc" eventType="touchUpInside" id="Hz8-tl-3r2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AcD-OJ-zHs"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="qsj-Gm-q1g" id="mlZ-m2-n6z"/>
+                        <outlet property="passwordTextField" destination="Eh5-m7-NVW" id="asm-EH-KUm"/>
+                        <outlet property="pushLogin" destination="NWs-2I-aO6" id="RUM-IT-4e6"/>
+                        <outlet property="scrollView" destination="xAC-2K-6XA" id="hk6-we-Rd9"/>
+                        <segue destination="GWo-u6-Xdn" kind="show" identifier="toHome" id="26i-zT-DF5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cla-m8-vMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165.59999999999999" y="72.413793103448285"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="TFh-41-aT1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="GWo-u6-Xdn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="loG-yK-WPh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRb-5c-aEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="76"/>
+        </scene>
+        <!--SignUp-->
+        <scene sceneID="a6F-vp-yaD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" id="PdG-kc-cUp" userLabel="SignUp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ug2-Ts-FmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="160"/>
+        </scene>
+    </scenes>
+</document>
