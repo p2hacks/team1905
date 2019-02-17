@@ -64,7 +64,7 @@ extension RegisterProfileViewController: UICollectionViewDataSource {
     // セクションごとのセル数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // realmに登録しているprofileの個数を返せば良い？
-        return 1//realm.objects(Profile.self).count
+        return realm.objects(Profile.self).count+1
     }
     
     // セルの設定
@@ -73,11 +73,11 @@ extension RegisterProfileViewController: UICollectionViewDataSource {
         
         //configureCell(cell: cell, indexPath: indexPath)
         
-        cell.nameLabel.text = name[indexPath.row]
-        cell.nicknameLabel.text = nickName[indexPath.row]
-        cell.numberLabel.text = number[indexPath.row]
-        cell.historyDayLabel.text = recentlyDate[indexPath.row]
-        cell.historyTimeLabel.text = passTime[indexPath.row]
+        cell.nameLabel.text = name[indexPath.row+1]
+        cell.nicknameLabel.text = nickName[indexPath.row+1]
+        cell.numberLabel.text = number[indexPath.row+1]
+        cell.historyDayLabel.text = recentlyDate[indexPath.row+1]
+        cell.historyTimeLabel.text = passTime[indexPath.row+1]
         
         return cell
     }
