@@ -66,9 +66,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         //Realmのマイグレーション処理
         let config = Realm.Configuration(
-            schemaVersion : 5 , //データの構造が変わったらここを変える
+            schemaVersion : 6 , //データの構造が変わったらここを変える
             migrationBlock : { migration, oldSchemaVersion in
-                if oldSchemaVersion < 5 {
+                if oldSchemaVersion < 6 {
                     var nextID = 0
                     migration.enumerateObjects(ofType: Profile.className()) { oldObject, newObject in
                         newObject!["id"] = String(nextID)

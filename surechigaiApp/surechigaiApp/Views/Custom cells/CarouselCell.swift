@@ -10,8 +10,6 @@ import UIKit
 
 class CarouselCell: UICollectionViewCell {
     
-    
-    
     @IBOutlet weak var registerView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,30 +19,72 @@ class CarouselCell: UICollectionViewCell {
     @IBOutlet weak var historyTimeLabel: UILabel!
     @IBOutlet weak var registerTableView: UITableView!
     
+    var switchingNumber = 0
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        //initCourceTableView()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setup()
+        //initCourceTableView()
     }
     
-    func setup() {
-        // ここでセットアップする
-        // セルを角丸にする
-        registerView.layer.cornerRadius = 10
-        registerView.layer.shadowOffset = CGSize(width: 1,height: 1) // 影の位置
-        registerView.layer.shadowColor = UIColor.gray.cgColor        // 影の色
-        registerView.layer.shadowOpacity = 0.7                       // 影の透明度
-        registerView.layer.shadowRadius = 5                          // 影の広がり
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        registerTableView.delegate = self
+        registerTableView.dataSource = self
+        initCourceTableView()
     }
-
+    
+    //MARK: - TableView init
+    func initCourceTableView() {
+        
+        let nib = UINib(nibName: "CarouselDetailsTableViewCell", bundle: nil)
+        registerTableView.register(nib, forCellReuseIdentifier: "carouselDetailCell_ID")
+    }
+    
+    
     @IBAction func pushProfileBtn(_ sender: Any) {
+        switchingNumber = 0
+        registerTableView.reloadData()
     }
     @IBAction func pushNotificationBtn(_ sender: Any) {
+        switchingNumber = 1
+        registerTableView.reloadData()
     }
     @IBAction func pushHistoryBtn(_ sender: Any) {
+        switchingNumber = 2
+        registerTableView.reloadData()
     }
+    
+    
 }
+
+extension CarouselCell: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = registerTableView.dequeueReusableCell(withIdentifier: "carouselDetailsTableViewCell", for: indexPath) 
+        if self.switchingNumber == 0 {
+            cell.detailTextLabel?.text = "プロフィール"
+        } else if self.switchingNumber == 1 {
+            cell.detailTextLabel?.text = "広告"
+        } else {
+            cell.detailTextLabel?.text = "履歴"
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.registerTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
+
