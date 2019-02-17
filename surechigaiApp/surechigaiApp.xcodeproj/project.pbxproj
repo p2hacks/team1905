@@ -15,6 +15,8 @@
 		03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD330E220F5F05006B7BCA /* HomeViewController.swift */; };
 		321585E822184C7E00E96890 /* SelectWaiting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321585E722184C7E00E96890 /* SelectWaiting.storyboard */; };
 		321585EA22184C9200E96890 /* SelectWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321585E922184C9200E96890 /* SelectWaitingViewController.swift */; };
+		321585ED2218924500E96890 /* CarouselDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321585EB2218924500E96890 /* CarouselDetailsTableViewCell.swift */; };
+		321585EE2218924500E96890 /* CarouselDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321585EC2218924500E96890 /* CarouselDetailsTableViewCell.xib */; };
 		32181EC92211AA6800655BA9 /* NotificationCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */; };
 		32181EDF2216D50F00655BA9 /* RegisterProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32181EDE2216D50F00655BA9 /* RegisterProfile.storyboard */; };
 		32181EEB2217117500655BA9 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32181EEA2217117500655BA9 /* CarouselView.swift */; };
@@ -88,6 +90,8 @@
 		230CECF1F17DD003A78DB7F0 /* Pods-surechigaiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-surechigaiAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-surechigaiAppTests/Pods-surechigaiAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		321585E722184C7E00E96890 /* SelectWaiting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectWaiting.storyboard; sourceTree = "<group>"; };
 		321585E922184C9200E96890 /* SelectWaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectWaitingViewController.swift; sourceTree = "<group>"; };
+		321585EB2218924500E96890 /* CarouselDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		321585EC2218924500E96890 /* CarouselDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		32181EC82211AA6800655BA9 /* NotificationCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCreateViewController.swift; sourceTree = "<group>"; };
 		32181EDE2216D50F00655BA9 /* RegisterProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterProfile.storyboard; sourceTree = "<group>"; };
 		32181EEA2217117500655BA9 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 			children = (
 				32181EEC2217122900655BA9 /* CarouselCell.swift */,
 				32181EED2217122900655BA9 /* CarouselCell.xib */,
+				321585EB2218924500E96890 /* CarouselDetailsTableViewCell.swift */,
+				321585EC2218924500E96890 /* CarouselDetailsTableViewCell.xib */,
 				32181EF022171B4400655BA9 /* PagingPerCellFlowLayout.swift */,
 				50ECAC842218371C000F6BA1 /* RegistrationTableViewCell.swift */,
 				50ECAC852218371C000F6BA1 /* RegistrationTableViewCell.xib */,
@@ -485,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321585EE2218924500E96890 /* CarouselDetailsTableViewCell.xib in Resources */,
 				50C8D826220F1D5100D09939 /* LaunchScreen.storyboard in Resources */,
 				03CD330D220F5AB7006B7BCA /* Setting_1x.png in Resources */,
 				50C8D823220F1D5100D09939 /* Assets.xcassets in Resources */,
@@ -712,6 +719,7 @@
 				50016FC92210802800F6C6D9 /* ProfileRegistrationViewController.swift in Sources */,
 				50ECAC76221836AA000F6BA1 /* Notification.swift in Sources */,
 				50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */,
+				321585ED2218924500E96890 /* CarouselDetailsTableViewCell.swift in Sources */,
 				03CD330F220F5F05006B7BCA /* HomeViewController.swift in Sources */,
 				50ECAC94221854BC000F6BA1 /* UIViewExtension.swift in Sources */,
 				50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */,

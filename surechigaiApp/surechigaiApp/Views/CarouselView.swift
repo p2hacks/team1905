@@ -28,8 +28,8 @@ class CarouselView: UICollectionView {
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-        self.delegate = self
-        self.dataSource = self
+        //self.delegate = self
+        //self.dataSource = self
         self.register(CarouselCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
     
@@ -82,7 +82,7 @@ class CarouselView: UICollectionView {
     }
 }
 
-extension CarouselView: UICollectionViewDelegate {
+/*extension CarouselView: UICollectionViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
@@ -96,8 +96,8 @@ extension CarouselView: UICollectionViewDelegate {
             }
         }
     }
-}
-
+}*/
+/*
 extension CarouselView: UICollectionViewDataSource {
     // セクションごとのセル数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -119,4 +119,4 @@ extension CarouselView: UICollectionViewDataSource {
         let fixedIndex = isInfinity ? indexPath.row % pageCount : indexPath.row
         //cell.contentView.backgroundColor = colors[fixedIndex]
     }
-}
+}*/

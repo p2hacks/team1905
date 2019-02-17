@@ -22,6 +22,8 @@ class Profile : Object, NSCoding {
     @objc dynamic var student_number = ""
     @objc dynamic var birthplace = ""
     @objc dynamic var birthDay = ""
+    @objc dynamic var recentlyDate = ""
+    @objc dynamic var passTime = ""
     
     
     // idをプライマリキーに設定
@@ -40,6 +42,8 @@ class Profile : Object, NSCoding {
         aCoder.encode(self.student_number, forKey: "STUDENT_NUMBER")
         aCoder.encode(self.birthplace, forKey: "BIRTHPLACE")
         aCoder.encode(self.birthDay, forKey: "BIRTHDAY")
+        aCoder.encode(self.recentlyDate, forKey: "RECENTLYDATE")
+        aCoder.encode(self.passTime, forKey: "PASSTIME")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,6 +58,8 @@ class Profile : Object, NSCoding {
         self.student_number = aDecoder.decodeObject(forKey: "STUDENT_NUMBER") as! String
         self.birthplace = aDecoder.decodeObject(forKey: "BIRTHPLACE") as! String
         self.birthDay = aDecoder.decodeObject(forKey: "BIRTHDAY") as! String
+        self.recentlyDate = aDecoder.decodeObject(forKey: "RECENTLYDATE") as! String
+        self.passTime = aDecoder.decodeObject(forKey: "PASSTIME") as! String
     }
     
     required init() {
@@ -68,6 +74,8 @@ class Profile : Object, NSCoding {
         self.student_number = ""
         self.birthplace = ""
         self.birthDay = ""
+        self.recentlyDate = ""
+        self.passTime = ""
     }
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
