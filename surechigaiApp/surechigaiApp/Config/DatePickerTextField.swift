@@ -56,7 +56,7 @@ class DatePickerTextField: UITextField {
         
         datePicker.date = defaultDate
         
-        toolbar = UIToolbar(frame: InputLogic.manager.CGRectMake(0, 0, 0, 35))
+        toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         toolbar.setItems([cancelItem, doneItem], animated: true)
@@ -64,6 +64,10 @@ class DatePickerTextField: UITextField {
         self.inputView = datePicker
         self.inputAccessoryView = toolbar
         
+    }
+    
+    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
     }
     
     @objc func cancel() {

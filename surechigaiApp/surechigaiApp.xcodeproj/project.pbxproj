@@ -32,6 +32,7 @@
 		50016FCB2210848400F6C6D9 /* ProfileRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50016FCA2210848400F6C6D9 /* ProfileRegistration.storyboard */; };
 		50016FD922155AC500F6C6D9 /* ExchangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */; };
 		50016FDD2215D52400F6C6D9 /* P2PConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */; };
+		5006A5ED2218BB0E00BB586D /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006A5EC2218BB0E00BB586D /* PickerTextField.swift */; };
 		507FE68D2216D3C700872283 /* BLEConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FE68C2216D3C700872283 /* BLEConnectivity.swift */; };
 		50C8D81C220F1D4E00D09939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8D81B220F1D4E00D09939 /* AppDelegate.swift */; };
 		50C8D821220F1D4E00D09939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C8D81F220F1D4E00D09939 /* Main.storyboard */; };
@@ -42,7 +43,6 @@
 		50ECAC6E22183695000F6BA1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECAC6C22183695000F6BA1 /* UIColorExtension.swift */; };
 		50ECAC6F22183695000F6BA1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECAC6D22183695000F6BA1 /* CustomTextField.swift */; };
 		50ECAC74221836AA000F6BA1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECAC71221836A9000F6BA1 /* Profile.swift */; };
-		50ECAC75221836AA000F6BA1 /* InputLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECAC72221836A9000F6BA1 /* InputLogic.swift */; };
 		50ECAC76221836AA000F6BA1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECAC73221836A9000F6BA1 /* Notification.swift */; };
 		50ECAC7D221836CB000F6BA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECAC78221836CB000F6BA1 /* ViewController.swift */; };
 		50ECAC7E221836CB000F6BA1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECAC79221836CB000F6BA1 /* SettingTableViewController.swift */; };
@@ -106,6 +106,7 @@
 		50016FCA2210848400F6C6D9 /* ProfileRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileRegistration.storyboard; sourceTree = "<group>"; };
 		50016FD822155AC500F6C6D9 /* ExchangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeProfile.storyboard; sourceTree = "<group>"; };
 		50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P2PConnectivity.swift; sourceTree = "<group>"; };
+		5006A5EC2218BB0E00BB586D /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		507FE68C2216D3C700872283 /* BLEConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConnectivity.swift; sourceTree = "<group>"; };
 		50C8D818220F1D4E00D09939 /* surechigaiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surechigaiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C8D81B220F1D4E00D09939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +123,6 @@
 		50ECAC6C22183695000F6BA1 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		50ECAC6D22183695000F6BA1 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		50ECAC71221836A9000F6BA1 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		50ECAC72221836A9000F6BA1 /* InputLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLogic.swift; sourceTree = "<group>"; };
 		50ECAC73221836A9000F6BA1 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		50ECAC78221836CB000F6BA1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50ECAC79221836CB000F6BA1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +287,7 @@
 				50ECAC93221854BC000F6BA1 /* UIViewExtension.swift */,
 				50ECAC6D22183695000F6BA1 /* CustomTextField.swift */,
 				50ECAC9522187777000F6BA1 /* DatePickerTextField.swift */,
+				5006A5EC2218BB0E00BB586D /* PickerTextField.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -298,7 +299,6 @@
 				50ECAC73221836A9000F6BA1 /* Notification.swift */,
 				50016FDC2215D52400F6C6D9 /* P2PConnectivity.swift */,
 				507FE68C2216D3C700872283 /* BLEConnectivity.swift */,
-				50ECAC72221836A9000F6BA1 /* InputLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -694,7 +694,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50ECAC75221836AA000F6BA1 /* InputLogic.swift in Sources */,
 				50ECAC882218371C000F6BA1 /* RegistrationTableViewCell.swift in Sources */,
 				507FE68D2216D3C700872283 /* BLEConnectivity.swift in Sources */,
 				50ECAC74221836AA000F6BA1 /* Profile.swift in Sources */,
@@ -705,6 +704,7 @@
 				50ECAC80221836CB000F6BA1 /* RegisterProfileViewController.swift in Sources */,
 				321585EA22184C9200E96890 /* SelectWaitingViewController.swift in Sources */,
 				32181EF32217A84500655BA9 /* SignUpViewController.swift in Sources */,
+				5006A5ED2218BB0E00BB586D /* PickerTextField.swift in Sources */,
 				50ECAC81221836CB000F6BA1 /* NotificationViewController.swift in Sources */,
 				50ECAC7F221836CB000F6BA1 /* ExchangeProfileViewController.swift in Sources */,
 				50ECAC7E221836CB000F6BA1 /* SettingTableViewController.swift in Sources */,
