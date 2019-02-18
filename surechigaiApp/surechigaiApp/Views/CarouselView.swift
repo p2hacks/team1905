@@ -22,6 +22,14 @@ class CarouselView: UICollectionView {
     let cellIdentifier = "registerCell"
     let pageCount = 5
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
+        //view.frame = frame
+        addSubview(view)
+        self.register(UINib(nibName: "CarouseCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -30,7 +38,10 @@ class CarouselView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
         //self.delegate = self
         //self.dataSource = self
-        self.register(CarouselCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
+        view.frame = frame
+        addSubview(view)
+        self.register(UINib(nibName: "CarouseCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
     }
     
     convenience init(frame: CGRect) {

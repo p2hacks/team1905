@@ -31,9 +31,19 @@
                     <real key="value" value="0.0"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="historyDayLabel" destination="YrS-ki-W5f" id="cvC-XO-m3C"/>
+                <outlet property="historyTimeLabel" destination="gtF-7d-xp3" id="osG-aU-nb3"/>
+                <outlet property="nameLabel" destination="h5P-vH-BbA" id="Ucg-cY-6hW"/>
+                <outlet property="nicknameLabel" destination="kwC-Kc-PMQ" id="QGi-cg-DPE"/>
+                <outlet property="numberLabel" destination="lza-ed-AuB" id="Ao4-jA-PtN"/>
+                <outlet property="profileImageView" destination="yVn-p5-1zH" id="bsg-Um-Nli"/>
+                <outlet property="registerTableView" destination="lTv-Nm-qe7" id="t3B-hw-jE0"/>
+                <outlet property="registerView" destination="Ym9-r0-eD6" id="3Nx-D2-MVh"/>
+            </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="registerCell" id="gTV-IL-0wX" customClass="CarouselCell" customModule="surechigaiApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX">
             <rect key="frame" x="0.0" y="0.0" width="300" height="430"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -47,6 +57,7 @@
                                 <rect key="frame" x="0.0" y="260" width="280" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVn-p5-1zH">
                                 <rect key="frame" x="105" y="23" width="70" height="70"/>
@@ -86,7 +97,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="prof.png"/>
                                 <connections>
-                                    <action selector="pushProfileBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="FLS-1A-nix"/>
+                                    <action selector="pushProfileBtn:" destination="-1" eventType="touchUpInside" id="gfb-9y-GMk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6O-xl-Euv">
@@ -94,7 +105,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="box.png"/>
                                 <connections>
-                                    <action selector="pushNotificationBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="A68-Wm-2CN"/>
+                                    <action selector="pushNotificationBtn:" destination="-1" eventType="touchUpInside" id="bX7-vm-MJf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-PI-Qsw">
@@ -102,7 +113,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="history.png"/>
                                 <connections>
-                                    <action selector="pushHistoryBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="xep-7Q-riy"/>
+                                    <action selector="pushHistoryBtn:" destination="-1" eventType="touchUpInside" id="7Vj-IF-fuI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrS-ki-W5f">
@@ -170,6 +181,7 @@
                     <real key="value" value="10"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+
             <connections>
                 <outlet property="historyDayLabel" destination="YrS-ki-W5f" id="rIn-Q0-zvF"/>
                 <outlet property="historyTimeLabel" destination="gtF-7d-xp3" id="GFd-89-Yu0"/>
@@ -180,6 +192,7 @@
                 <outlet property="registerView" destination="Ym9-r0-eD6" id="T3P-eJ-jBZ"/>
             </connections>
             <point key="canvasLocation" x="52.799999999999997" y="88.15592203898052"/>
+
         </collectionViewCell>
     </objects>
     <resources>
