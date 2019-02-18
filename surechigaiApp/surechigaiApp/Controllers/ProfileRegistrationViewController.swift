@@ -25,13 +25,15 @@ class ProfileRegistrationViewController: UIViewController {
     let realm = try! Realm()
     var profile: Profile = Profile()
     
+    var default_date: String = "1990/01/01"
+    
     var isFirstResistration: Bool = true
     
     @IBOutlet weak var inputTable: UITableView!
     
     @IBAction func onTapRegistrationBtn(_ sender: Any) {
         profile = Profile()
-        inputTable.reloadData()
+        getTFValue()
         
         if isFirstResistration {
             createProfile(data: profile)
@@ -59,6 +61,35 @@ class ProfileRegistrationViewController: UIViewController {
             isFirstResistration = false
             
         }
+        
+        getData()
+        
+    }
+    
+    func getData() {
+        let results = realm.objects(Profile.self)
+        
+        guard results.isEmpty else {
+            profile.name = results[0].name
+            profile.handle = results[0].handle
+            profile.birthDay = results[0].birthDay
+            profile.birthplace = results[0].birthplace
+            default_date = results[0].birthDay
+            return
+        }
+        print(SET_TEXT_ERROR)
+    }
+    
+    func getTFValue(){
+        let nameCell = inputTable.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! ProfileTableViewCell
+        let handleCell = inputTable.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! ProfileTableViewCell
+        let birthDayCell = inputTable.cellForRow(at: IndexPath.init(row: 2, section: 0)) as! ProfileTableViewCell
+        let birthPlaceCell = inputTable.cellForRow(at: IndexPath.init(row: 3, section: 0)) as! ProfileTableViewCell
+        
+        profile.name = nameCell.nameTF.text!
+        profile.handle = handleCell.handleTF.text!
+        profile.birthDay = birthDayCell.birthDayTF.text!
+        profile.birthplace = birthPlaceCell.birthPlaceTF.text!
         
     }
     
@@ -100,23 +131,23 @@ extension ProfileRegistrationViewController: UITableViewDelegate, UITableViewDat
         switch indexPath.row {
         case 0: // 氏名 "student_number"
             let cell = tableView.dequeueReusableCell(withIdentifier: "name", for: indexPath) as! ProfileTableViewCell
-        profile.name = cell.nameTF.text!
+            cell.nameTF.text = profile.name
         return cell
         case 1: // ハンドルネーム "grade"
         let cell = tableView.dequeueReusableCell(withIdentifier: "handle", for: indexPath) as! ProfileTableViewCell
-        profile.handle = cell.handleTF.text!
+        cell.handleTF.text = profile.handle
         return cell
         case 2: // 誕生日 "course"
         let cell = tableView.dequeueReusableCell(withIdentifier: "birthDay", for: indexPath) as! ProfileTableViewCell
         cell.birthDayTF.setup()
-        profile.birthDay = cell.birthDayTF.text!
+        cell.birthDayTF.setText(text: default_date)
         return cell
         case 3: // 出身地　"sfirst_class"
         let cell = tableView.dequeueReusableCell(withIdentifier: "birthPlace", for: indexPath) as! ProfileTableViewCell
-        profile.birthplace = cell.birthPlaceTF.text!
+        cell.birthPlaceTF.text = profile.birthplace
         return cell
         default:
-        let cell = tableView.dequeueReusableCell(withIdentifier: "name", for: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "name", for: indexPath)as! ProfileTableViewCell
         return cell
     }
     }

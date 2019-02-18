@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class ProfileTableViewCell: UITableViewCell {
     
@@ -15,22 +14,10 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var birthDayTF: DatePickerTextField!
     @IBOutlet weak var birthPlaceTF: UITextField!
     @IBOutlet weak var handleTF: UITextField!
-    
-    let realm = try! Realm()
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    func setTF(){
-        let results = realm.objects(Profile.self)
-        
-        nameTF.text = results[0].name
-        birthDayTF.text = results[0].birthDay
-        birthPlaceTF.text = results[0].birthplace
-        handleTF.text = results[0].handle
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

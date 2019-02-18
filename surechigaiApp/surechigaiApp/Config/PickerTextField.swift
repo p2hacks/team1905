@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 
 class PickerTextField: UITextField {
     
@@ -19,8 +18,6 @@ class PickerTextField: UITextField {
     var degree_row: Int = 0
     var grade_degree: String = ""
     var grade_year: String = ""
-    
-    let realm = try! Realm()
     
     init() {
         super.init(frame: CGRect.zero)
@@ -80,6 +77,12 @@ class PickerTextField: UITextField {
     func setTextFields(default_row: Int, degree_row: Int = 0) {
         self.default_row = default_row
         self.degree_row = degree_row
+        if dataLists.count == 1 {
+            self.text = dataLists[0][default_row]
+        } else {
+            self.text = dataLists[1][degree_row]
+        }
+        
     }
     
     @objc func cancel() {

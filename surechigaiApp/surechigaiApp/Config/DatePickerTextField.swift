@@ -37,33 +37,38 @@ class DatePickerTextField: UITextField {
     }
     
     func setup() {
-        self.delegate = self
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
-        
-        datePicker.datePickerMode = .date
-        datePicker.locale = Locale(identifier: "ja")
         
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         
-        
         let minDate = dateFormatter.date(from: minDateString)
+        
+        defaultDate = dateFormatter.date(from: defaultDateString)!
+        datePicker.date = defaultDate
         
         datePicker.minimumDate = minDate
         datePicker.maximumDate = Date()
-
-        defaultDate = dateFormatter.date(from: defaultDateString)!
         
-        datePicker.date = defaultDate
+        datePicker.datePickerMode = .date
+        datePicker.locale = Locale(identifier: "ja")
         
-        toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
+        
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        
+        toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
         toolbar.setItems([cancelItem, doneItem], animated: true)
        
+        self.delegate = self
         self.inputView = datePicker
         self.inputAccessoryView = toolbar
         
+    }
+    
+    func setText(text: String) {
+        self.defaultDateString = text
+        self.text = defaultDateString
     }
     
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
