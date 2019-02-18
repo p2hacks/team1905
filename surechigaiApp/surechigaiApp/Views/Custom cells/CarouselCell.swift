@@ -17,7 +17,6 @@ class CarouselCell: UICollectionViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var historyDayLabel: UILabel!
     @IBOutlet weak var historyTimeLabel: UILabel!
-    @IBOutlet weak var registerTableView: UITableView!
     
     var switchingNumber = 0
     
@@ -38,39 +37,33 @@ class CarouselCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // XIB読み込み
-        let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
-        addSubview(view)
-        
-        initCarouselTableView()
+        /*registerTableView.delegate = self
+        registerTableView.dataSource = self*/
+        //initCourceTableView()
     }
     
     //MARK: - TableView init
-    func initCarouselTableView() {
+    /*func initCourceTableView() {
         
-        //let nib = UINib(nibName: "CarouselDetailsTableViewCell", bundle: nil)
-        self.registerTableView.register(UINib(nibName: "CarouselDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "carouselDetailCell_ID")
-        //registerTableView.register(nib, forCellReuseIdentifier: "carouselDetailCell_ID")
-    }
+        let nib = UINib(nibName: "CarouselDetailsTableViewCell", bundle: nil)
+        registerTableView.register(nib, forCellReuseIdentifier: "carouselDetailCell_ID")
+    }*/
     
     
     @IBAction func pushProfileBtn(_ sender: Any) {
         switchingNumber = 0
-        registerTableView.reloadData()
     }
     @IBAction func pushNotificationBtn(_ sender: Any) {
         switchingNumber = 1
-        registerTableView.reloadData()
     }
     @IBAction func pushHistoryBtn(_ sender: Any) {
         switchingNumber = 2
-        registerTableView.reloadData()
     }
     
     
 }
 
-extension CarouselCell: UITableViewDelegate, UITableViewDataSource{
+/*extension CarouselCell: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -93,4 +86,4 @@ extension CarouselCell: UITableViewDelegate, UITableViewDataSource{
     }
     
 }
-
+*/

@@ -57,10 +57,7 @@
                                 <rect key="frame" x="0.0" y="260" width="280" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="-1" id="DC8-qE-hbO"/>
-                                    <outlet property="delegate" destination="-1" id="0gP-BM-Gbw"/>
-                                </connections>
+
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVn-p5-1zH">
                                 <rect key="frame" x="105" y="23" width="70" height="70"/>
@@ -184,7 +181,18 @@
                     <real key="value" value="10"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
-            <point key="canvasLocation" x="-54" y="91"/>
+
+            <connections>
+                <outlet property="historyDayLabel" destination="YrS-ki-W5f" id="rIn-Q0-zvF"/>
+                <outlet property="historyTimeLabel" destination="gtF-7d-xp3" id="GFd-89-Yu0"/>
+                <outlet property="nameLabel" destination="h5P-vH-BbA" id="cb9-HV-Jwf"/>
+                <outlet property="nicknameLabel" destination="kwC-Kc-PMQ" id="Qca-1j-an0"/>
+                <outlet property="numberLabel" destination="lza-ed-AuB" id="beg-5M-r0V"/>
+                <outlet property="profileImageView" destination="yVn-p5-1zH" id="8jS-db-9uk"/>
+                <outlet property="registerView" destination="Ym9-r0-eD6" id="T3P-eJ-jBZ"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="88.15592203898052"/>
+
         </collectionViewCell>
     </objects>
     <resources>
