@@ -34,7 +34,7 @@ class StudentInfoRegistrationViewController: UIViewController {
     @IBAction func onTapRegistrationBtn(_ sender: Any) {
         
         profile = Profile()
-        inputTable.reloadData()
+        getTFValue()
         
         updateProfile(data: profile)
         self.performSegue(withIdentifier: "toMain", sender: nil)
@@ -60,6 +60,20 @@ class StudentInfoRegistrationViewController: UIViewController {
         setTextFields()
     }
     
+    func getTFValue(){
+        let studentNumberCell = inputTable.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! RegistrationTableViewCell
+        let gradeCell = inputTable.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! RegistrationTableViewCell
+        let courseCell = inputTable.cellForRow(at: IndexPath.init(row: 2, section: 0)) as! RegistrationTableViewCell
+        let firstClassCell = inputTable.cellForRow(at: IndexPath.init(row: 3, section: 0)) as! RegistrationTableViewCell
+        let clubCell = inputTable.cellForRow(at: IndexPath.init(row: 4, section: 0)) as! RegistrationTableViewCell
+        
+        profile.student_number = studentNumberCell.studentNumberTF.text!
+        profile.grade = gradeCell.gradeTF.text!
+        profile.course = courseCell.courseTF.text!
+        profile.part_of_class = firstClassCell.firstClassTF.text!
+        profile.club = clubCell.clubTF.text!
+    }
+    
     // Realm操作系の処理
     
     func createProfile(data: Profile) {
@@ -76,19 +90,14 @@ class StudentInfoRegistrationViewController: UIViewController {
         let results = realm.objects(Profile.self)
         
         try! realm.write {
-            results[0].name = data.name
             results[0].student_number = data.student_number
-            results[0].birthDay = data.birthDay
-            results[0].birthplace = data.birthplace
             results[0].course = data.course
             results[0].part_of_class = data.part_of_class
             results[0].club = data.club
             results[0].grade = data.grade
-            results[0].handle = data.handle
         }
     }
     
-    //
     func setTextFields() {
         let results = realm.objects(Profile.self)
         
@@ -102,10 +111,10 @@ class StudentInfoRegistrationViewController: UIViewController {
                 grade = String(results[0].grade.suffix(2).prefix(1))
             }
             
-            let defaultCourse_row = courseList.index(of: results[0].course)!
-            let defaultFirstClass_row = firstClassList.index(of: results[0].part_of_class)!
-            let defaultDegree_row = degreeList.index(of: degree)!
-            let defaultGrade_row = gradeList.index(of: grade)!
+            defaultCourse_row = courseList.index(of: results[0].course)!
+            defaultFirstClass_row = firstClassList.index(of: results[0].part_of_class)!
+            defaultDegree_row = degreeList.index(of: degree)!
+            defaultGrade_row = gradeList.index(of: grade)!
             
             return
         }
@@ -139,31 +148,26 @@ extension StudentInfoRegistrationViewController: UITableViewDelegate, UITableVie
         switch indexPath.row {
         case 0: // 学籍番号 "student_number"
             let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as! RegistrationTableViewCell
-            profile.student_number = cell.studentNumberTF.text!
+            cell.studentNumberTF.text! = profile.student_number
             return cell
         case 1: // 学年 "grade"
             let cell = tableView.dequeueReusableCell(withIdentifier: "grade", for: indexPath) as! RegistrationTableViewCell
             cell.gradeTF.setup(dataList1: degreeList, dataList2: gradeList)
             cell.gradeTF.setTextFields(default_row: defaultDegree_row, degree_row: defaultGrade_row)
             cell.gradeTF.setTextFields(default_row: defaultDegree_row)
-            profile.grade = cell.gradeTF.text!
             return cell
         case 2: // コース "course"
             let cell = tableView.dequeueReusableCell(withIdentifier: "course", for: indexPath) as! RegistrationTableViewCell
             cell.courseTF.setup(dataList2: courseList)
             cell.courseTF.setTextFields(default_row: defaultCourse_row)
-            profile.course = cell.courseTF.text!
-            
             return cell
         case 3: // 一年次クラス　"first_class"
             let cell = tableView.dequeueReusableCell(withIdentifier: "first_class", for: indexPath) as! RegistrationTableViewCell
             cell.firstClassTF.setup(dataList2: firstClassList)
             cell.firstClassTF.setTextFields(default_row: defaultFirstClass_row)
-            profile.part_of_class = cell.firstClassTF.text!
             return cell
         case 4: // サークル　"club"
             let cell = tableView.dequeueReusableCell(withIdentifier: "club", for: indexPath) as! RegistrationTableViewCell
-            profile.club = cell.clubTF.text!
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as! RegistrationTableViewCell
