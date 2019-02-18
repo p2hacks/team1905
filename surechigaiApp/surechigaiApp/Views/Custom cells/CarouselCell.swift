@@ -17,6 +17,7 @@ class CarouselCell: UICollectionViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var historyDayLabel: UILabel!
     @IBOutlet weak var historyTimeLabel: UILabel!
+    @IBOutlet weak var infoTable: UITableView!
     
     var switchingNumber = 0
     
@@ -27,12 +28,14 @@ class CarouselCell: UICollectionViewCell {
         view.frame = frame
         addSubview(view)
         
-        initCarouselTableView()
+        
+        
+        //initCarouselTableView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
+        //fatalError("init(coder:) has not been implemented")
     }
     
     override func awakeFromNib() {
