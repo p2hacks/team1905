@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nA2-WV-jwp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="personEdit" translatesAutoresizingMaskIntoConstraints="NO" id="nA2-WV-jwp">
                                 <rect key="frame" x="87" y="56" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -54,7 +54,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameTF" destination="Qwx-9r-6MW" id="gTk-bG-vEc"/>
-                                            <outlet property="studentNumberTF" destination="Qwx-9r-6MW" id="cjj-hg-Zob"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="handle" id="RvG-Ej-Pjh" customClass="ProfileTableViewCell" customModule="surechigaiApp" customModuleProvider="target">
@@ -81,7 +80,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="gradeTF" destination="ZwK-IN-nb3" id="M0l-5n-bwl"/>
                                             <outlet property="handleTF" destination="ZwK-IN-nb3" id="ePq-tt-CjL"/>
                                         </connections>
                                     </tableViewCell>
@@ -109,7 +107,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="birthDayTF" destination="ZwK-IN-nb3" id="81u-Do-s12"/>
+                                            <outlet property="birthDayTF" destination="5KC-ma-1ss" id="Ghq-8f-HeI"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthPlace" id="YeH-rs-jtd" customClass="ProfileTableViewCell" customModule="surechigaiApp" customModuleProvider="target">
@@ -137,7 +135,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="birthPlaceTF" destination="z2J-cP-uZG" id="1HD-C7-BRe"/>
-                                            <outlet property="firstClassTF" destination="z2J-cP-uZG" id="hRZ-sM-A35"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -145,10 +142,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66x-FB-NMy">
                                 <rect key="frame" x="172" y="578" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="登録"/>
+                                <state key="normal" title="次へ"/>
                                 <connections>
                                     <action selector="onTapRegistrationBtn:" destination="rBh-io-cwg" eventType="touchUpInside" id="dcQ-XS-7vC"/>
-                                    <segue destination="DBp-xY-sVU" kind="presentation" id="Dw1-uz-fsN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -157,6 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="inputTable" destination="bIB-XW-vch" id="0fH-Ir-TzI"/>
+                        <segue destination="DBp-xY-sVU" kind="presentation" identifier="toStudentInput" id="AdL-lx-E7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBw-tr-LSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,8 +176,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBP-QX-GVQ">
-                                <rect key="frame" x="87" y="53" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="univEdit" translatesAutoresizingMaskIntoConstraints="NO" id="UBP-QX-GVQ">
+                                <rect key="frame" x="87" y="87" width="200" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rry-Fh-Pal">
@@ -249,7 +246,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="gradeTF" destination="lI8-so-wjC" id="r0K-0j-8TE"/>
+                                            <outlet property="gradeTF" destination="lI8-so-wjC" id="rNp-dc-115"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="course" id="6F8-y3-PlR" customClass="RegistrationTableViewCell" customModule="surechigaiApp" customModuleProvider="target">
@@ -340,12 +337,7 @@
                         <viewLayoutGuide key="safeArea" id="Sk5-Lq-BHD"/>
                     </view>
                     <connections>
-                        <outlet property="clubTF" destination="j1U-mh-H5l" id="mdc-fN-frL"/>
-                        <outlet property="courseTF" destination="RTP-QS-YqH" id="dKL-Cf-jjK"/>
-                        <outlet property="firstClassTF" destination="Nen-Cg-8cO" id="CCe-a0-sx3"/>
-                        <outlet property="gradeTF" destination="lI8-so-wjC" id="PsN-nr-9jR"/>
                         <outlet property="inputTable" destination="vB0-ww-Kyu" id="a1A-iw-Fbg"/>
-                        <outlet property="studentNumberTF" destination="sXH-mx-hzt" id="PaF-1Y-4Y3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58Y-Jp-Ayb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,4 +345,8 @@
             <point key="canvasLocation" x="29.600000000000001" y="952.17391304347836"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="personEdit" width="594" height="594"/>
+        <image name="univEdit" width="554" height="474"/>
+    </resources>
 </document>

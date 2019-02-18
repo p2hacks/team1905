@@ -30,17 +30,15 @@ class ProfileRegistrationViewController: UIViewController {
     @IBOutlet weak var inputTable: UITableView!
     
     @IBAction func onTapRegistrationBtn(_ sender: Any) {
-        profile.name = inputTable.cellForRow(at: IndexPath(0)).nameTF.text!
-        profile.birthDay = birthDayTF.text!
-        profile.birthplace = birthPlaceTF.text!
-        profile.handle = handleTF.text!
+        profile = Profile()
+        inputTable.reloadData()
         
         if isFirstResistration {
             createProfile(data: profile)
-            self.performSegue(withIdentifier: "toMain", sender: nil)
+            self.performSegue(withIdentifier: "toStudentInput", sender: nil)
         } else {
             updateProfile(data: profile)
-            navigationController?.popViewController(animated: true)
+            self.performSegue(withIdentifier: "toStudentInput", sender: nil)
         }
         
         //navigationController?.popViewController(animated: true)
@@ -49,6 +47,9 @@ class ProfileRegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        inputTable.delegate = self
+        inputTable.dataSource = self
         
         let results = realm.objects(Profile.self)
         
@@ -83,23 +84,6 @@ class ProfileRegistrationViewController: UIViewController {
             results[0].handle = data.handle
         }
     }
-  
-    //
-    func setTextFields() {
-        let results = realm.objects(Profile.self)
-        
-        guard results.isEmpty else {
-            nameTF.text = results[0].name
-            birthDayTF.text = results[0].birthDay
-            birthPlaceTF.text = results[0].birthplace
-            handleTF.text = results[0].handle
-            
-            return
-        }
-        
-        print(SET_TEXT_ERROR)
-        
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -120,12 +104,16 @@ extension ProfileRegistrationViewController: UITableViewDelegate, UITableViewDat
         return cell
         case 1: // ハンドルネーム "grade"
         let cell = tableView.dequeueReusableCell(withIdentifier: "handle", for: indexPath) as! ProfileTableViewCell
+        profile.handle = cell.handleTF.text!
         return cell
         case 2: // 誕生日 "course"
         let cell = tableView.dequeueReusableCell(withIdentifier: "birthDay", for: indexPath) as! ProfileTableViewCell
+        cell.birthDayTF.setup()
+        profile.birthDay = cell.birthDayTF.text!
         return cell
         case 3: // 出身地　"sfirst_class"
         let cell = tableView.dequeueReusableCell(withIdentifier: "birthPlace", for: indexPath) as! ProfileTableViewCell
+        profile.birthplace = cell.birthPlaceTF.text!
         return cell
         default:
         let cell = tableView.dequeueReusableCell(withIdentifier: "name", for: indexPath) as! UITableViewCell
@@ -134,12 +122,4 @@ extension ProfileRegistrationViewController: UITableViewDelegate, UITableViewDat
     }
     
     
-}
-
-extension ProfileRegistrationViewController: InputTextTableCellDelegate {
-    
-    func textFieldDidEndEditing(cell: ProfileTableViewCell, value: NSString) -> () {
-        let path = inputTable.indexPathForRowAtPoint(cell.convertPoint(cell.bounds.origin, toView: tableView))
-        NSLog("row = %d, value = %@", path!.row, value)
-    }
 }

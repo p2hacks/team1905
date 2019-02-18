@@ -350,9 +350,9 @@
 				321585EB2218924500E96890 /* CarouselDetailsTableViewCell.swift */,
 				321585EC2218924500E96890 /* CarouselDetailsTableViewCell.xib */,
 				32181EF022171B4400655BA9 /* PagingPerCellFlowLayout.swift */,
+				5006A5F022192BDE00BB586D /* ProfileTableViewCell.swift */,
 				50ECAC842218371C000F6BA1 /* RegistrationTableViewCell.swift */,
 				50ECAC852218371C000F6BA1 /* RegistrationTableViewCell.xib */,
-				5006A5F022192BDE00BB586D /* ProfileTableViewCell.swift */,
 			);
 			path = "Custom cells";
 			sourceTree = "<group>";

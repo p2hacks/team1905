@@ -7,11 +7,7 @@
 //
 
 import UIKit
-
-// 追加
-protocol InputTextTableCellDelegate {
-    func textFieldDidEndEditing(cell: ProfileTableViewCell, value: NSString) -> ()
-}
+import RealmSwift
 
 class ProfileTableViewCell: UITableViewCell {
     
@@ -20,23 +16,27 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var birthPlaceTF: UITextField!
     @IBOutlet weak var handleTF: UITextField!
     
-    var delegate: InputTextTableCellDelegate! = nil
+    let realm = try! Realm()
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setTF(){
+        let results = realm.objects(Profile.self)
         
-        birthDayTF.setup()
+        nameTF.text = results[0].name
+        birthDayTF.text = results[0].birthDay
+        birthPlaceTF.text = results[0].birthplace
+        handleTF.text = results[0].handle
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    internal func textFieldDidEndEditing(textField: UITextField) {
-        self.delegate.textFieldDidEndEditing(self, value: textField.text!)
     }
 
 }

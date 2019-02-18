@@ -91,7 +91,7 @@ class DatePickerTextField: UITextField {
 extension DatePickerTextField: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        defaultDateString = self.text!
+        //defaultDateString = self.text!
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         defaultDate = dateFormatter.date(from: defaultDateString)!

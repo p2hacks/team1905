@@ -10,16 +10,10 @@ import UIKit
 import RealmSwift
 
 class StudentInfoRegistrationViewController: UIViewController {
-
+    
     @IBOutlet weak var inputTable: UITableView!
     
     let SET_TEXT_ERROR: String = "error: Realmのデータが空ですが、setTextが呼ばれています"
-    
-    @IBOutlet weak var studentNumberTF: UITextField!
-    @IBOutlet weak var courseTF: PickerTextField!
-    @IBOutlet weak var firstClassTF: PickerTextField!
-    @IBOutlet weak var clubTF: UITextField!
-    @IBOutlet weak var gradeTF: PickerTextField!
     
     let realm = try! Realm()
     var profile: Profile = Profile()
@@ -39,15 +33,11 @@ class StudentInfoRegistrationViewController: UIViewController {
     
     @IBAction func onTapRegistrationBtn(_ sender: Any) {
         
-        profile.student_number = studentNumberTF.text!
-        profile.course = courseTF.text!
-        profile.part_of_class = firstClassTF.text!
-        profile.club = clubTF.text!
-        profile.grade = gradeTF.text!
+        profile = Profile()
+        inputTable.reloadData()
         
-        
-            updateProfile(data: profile)
-            self.performSegue(withIdentifier: "toMain", sender: nil)
+        updateProfile(data: profile)
+        self.performSegue(withIdentifier: "toMain", sender: nil)
         
         //navigationController?.popViewController(animated: true)
         
@@ -68,10 +58,6 @@ class StudentInfoRegistrationViewController: UIViewController {
         }
         
         setTextFields()
-        
-        courseTF.setup(dataList2: courseList)
-        firstClassTF.setup(dataList2: firstClassList)
-        gradeTF.setup(dataList1: degreeList, dataList2: gradeList)
     }
     
     // Realm操作系の処理
@@ -107,11 +93,6 @@ class StudentInfoRegistrationViewController: UIViewController {
         let results = realm.objects(Profile.self)
         
         guard results.isEmpty else {
-            studentNumberTF.text = results[0].student_number
-            courseTF.text = results[0].course
-            firstClassTF.text = results[0].part_of_class
-            clubTF.text = results[0].club
-            gradeTF.text = results[0].grade
             
             var degree: String = ""
             var grade: String = ""
@@ -126,11 +107,6 @@ class StudentInfoRegistrationViewController: UIViewController {
             let defaultDegree_row = degreeList.index(of: degree)!
             let defaultGrade_row = gradeList.index(of: grade)!
             
-            courseTF.setTextFields(default_row: defaultCourse_row)
-            firstClassTF.setTextFields(default_row: defaultFirstClass_row)
-            gradeTF.setTextFields(default_row: defaultDegree_row, degree_row: defaultGrade_row)
-            gradeTF.setTextFields(default_row: defaultDegree_row)
-            
             return
         }
         
@@ -141,17 +117,17 @@ class StudentInfoRegistrationViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension StudentInfoRegistrationViewController: UITableViewDelegate, UITableViewDataSource {
@@ -162,22 +138,35 @@ extension StudentInfoRegistrationViewController: UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0: // 学籍番号 "student_number"
-            let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as! RegistrationTableViewCell
+            profile.student_number = cell.studentNumberTF.text!
             return cell
         case 1: // 学年 "grade"
-            let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "grade", for: indexPath) as! RegistrationTableViewCell
+            cell.gradeTF.setup(dataList1: degreeList, dataList2: gradeList)
+            cell.gradeTF.setTextFields(default_row: defaultDegree_row, degree_row: defaultGrade_row)
+            cell.gradeTF.setTextFields(default_row: defaultDegree_row)
+            profile.grade = cell.gradeTF.text!
             return cell
         case 2: // コース "course"
-            let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "course", for: indexPath) as! RegistrationTableViewCell
+            cell.courseTF.setup(dataList2: courseList)
+            cell.courseTF.setTextFields(default_row: defaultCourse_row)
+            profile.course = cell.courseTF.text!
+            
             return cell
-        case 3: // 一年次クラス　"sfirst_class"
-            let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as UITableViewCell
+        case 3: // 一年次クラス　"first_class"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "first_class", for: indexPath) as! RegistrationTableViewCell
+            cell.firstClassTF.setup(dataList2: firstClassList)
+            cell.firstClassTF.setTextFields(default_row: defaultFirstClass_row)
+            profile.part_of_class = cell.firstClassTF.text!
             return cell
         case 4: // サークル　"club"
-            let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "club", for: indexPath) as! RegistrationTableViewCell
+            profile.club = cell.clubTF.text!
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "student_number", for: indexPath) as! RegistrationTableViewCell
             return cell
         }
     }
@@ -185,6 +174,5 @@ extension StudentInfoRegistrationViewController: UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.leastNormalMagnitude
     }
-    
     
 }
