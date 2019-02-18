@@ -29,9 +29,6 @@ class RegisterProfileViewController: UIViewController {
         
         carouselView = CarouselView(frame: CGRect(x:0, y:0, width:width, height:height+200))
         carouselView.center = CGPoint(x:width / 2,y: height / 2)
-        //let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
-        //view.frame = carouselView.frame
-        carouselView.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: "registerCell")
         carouselView.layoutMargins.left = 5
         carouselView.layoutMargins.right = 5
         self.view.addSubview(carouselView)
@@ -71,15 +68,15 @@ extension RegisterProfileViewController: UICollectionViewDataSource {
     
     // セルの設定
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:CarouselCell = carouselView.dequeueReusableCell(withReuseIdentifier: "registerCell", for: indexPath) as! CarouselCell
+        let cell: CarouselCell = carouselView.dequeueReusableCell(withReuseIdentifier: "registerCell", for: indexPath) as! CarouselCell
         
         //configureCell(cell: cell, indexPath: indexPath)
         
-        cell.nameLabel.text = name[indexPath.row+1]
-        cell.nicknameLabel.text = nickName[indexPath.row+1]
-        cell.numberLabel.text = number[indexPath.row+1]
-        cell.historyDayLabel.text = recentlyDate[indexPath.row+1]
-        cell.historyTimeLabel.text = passTime[indexPath.row+1]
+        //cell.nameLabel.text = name[indexPath.row+1]
+        //cell.nicknameLabel.text = nickName[indexPath.row+1]
+        //cell.numberLabel.text = number[indexPath.row+1]
+        //cell.historyDayLabel.text = recentlyDate[indexPath.row+1]
+        //cell.historyTimeLabel.text = passTime[indexPath.row+1]
         
         return cell
     }
@@ -106,3 +103,4 @@ extension RegisterProfileViewController: UICollectionViewDelegate {
         }*/
     }
 }
+

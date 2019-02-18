@@ -24,10 +24,9 @@ class CarouselView: UICollectionView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
-        //view.frame = frame
-        addSubview(view)
-        self.register(UINib(nibName: "CarouseCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        /*let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
+        addSubview(view)*/
+        self.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,10 +37,10 @@ class CarouselView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
         //self.delegate = self
         //self.dataSource = self
-        let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
+        /*let view = Bundle.main.loadNibNamed("CarouselCell", owner: self, options: nil)?.first as! UIView
         view.frame = frame
-        addSubview(view)
-        self.register(UINib(nibName: "CarouseCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        addSubview(view)*/
+        self.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
     }
     
     convenience init(frame: CGRect) {
@@ -92,8 +91,8 @@ class CarouselView: UICollectionView {
         cell.transform = CGAffineTransform(scaleX:newScale, y:newScale)
     }
 }
-
-/*extension CarouselView: UICollectionViewDelegate {
+/*
+extension CarouselView: UICollectionViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
@@ -107,8 +106,8 @@ class CarouselView: UICollectionView {
             }
         }
     }
-}*/
-/*
+}
+
 extension CarouselView: UICollectionViewDataSource {
     // セクションごとのセル数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -118,7 +117,7 @@ extension CarouselView: UICollectionViewDataSource {
     
     // セルの設定
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:CarouselCell = dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CarouselCell
+        let cell: CarouselCell = dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CarouselCell
         
         configureCell(cell: cell, indexPath: indexPath)
         
